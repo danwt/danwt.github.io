@@ -1,4 +1,6 @@
-# plainwhite
+# Original theme thanks to https://github.com/samarsault:
+
+## plainwhite
 
 Simplistic jekyll portfolio-style theme for writers.
 
