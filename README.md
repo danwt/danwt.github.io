@@ -1,4 +1,4 @@
-# Original theme thanks to https://github.com/samarsault:
+# Original theme thanks to [samarsault](https://github.com/samarsault)! :
 
 ## plainwhite
 
