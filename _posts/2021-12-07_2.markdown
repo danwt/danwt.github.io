@@ -14,5 +14,3 @@ Suppose the opposite, for contradiction. If P0 WRITE's at t=0 and P1 READ's at t
 Paraphrased from [^1]:
 
 [^1]: [Hagit Attiya; Faith Ellen, Impossibility Results for Distributed Computing , Morgan & Claypool, 2014.](Hagit Attiya; Faith Ellen, Impossibility Results for Distributed Computing , Morgan & Claypool, 2014.)
-
-<iframe width="420" height="315" src="https://youtu.be/peKYddIvCIs" frameborder="0" allowfullscreen></iframe>
