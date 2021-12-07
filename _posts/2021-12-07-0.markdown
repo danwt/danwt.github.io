@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TLA+ talk video - the Agoric smart contract kernel"
+title:  "TLA+ video - the Agoric smart contract kernel"
 date:   2021-12-07 18:043:00 +0000
 categories: tla
 ---

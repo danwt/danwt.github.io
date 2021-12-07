@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "TLA+ basics tutorial video"
+title:  "TLA+ video - basics tutorial"
 date:   2021-12-07 18:044:00 +0000
 categories: tla
 ---
 
-In December 2021 I gave a TLA+ tutorial focusing on the basics of using the language, and how to make the most of the Apalache and TLC model checkers.
+In December 2021 I gave a TLA+ tutorial on the basics of using the language and making the most of the Apalache and TLC model checkers.
 
 <iframe width="1024" height="768" src="https://youtu.be/peKYddIvCIs" frameborder="0" allowfullscreen></iframe>
