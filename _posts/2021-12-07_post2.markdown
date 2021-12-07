@@ -11,6 +11,5 @@ d <= R + W.
 
 Suppose the opposite, for contradiction. If P0 WRITE's at t=0 and P1 READ's at t=W then by R+W P1's READ has returned. P1 cannot in the worst case distinguish executions where P0 did WRITE(1) or WRITE(2) if R+W < d.
 
-Paraphrased from [^1]:
 
-[^1]: [Hagit Attiya; Faith Ellen, Impossibility Results for Distributed Computing , Morgan & Claypool, 2014.](https://ieeexplore.ieee.org/document/6855592/)
+##### Paraphrased from [Hagit Attiya; Faith Ellen, Impossibility Results for Distributed Computing , Morgan & Claypool, 2014.](https://ieeexplore.ieee.org/document/6855592/)
