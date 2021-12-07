@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "TLA+ basics tutorial video"
-date:   2021-12-07 18:043:00 +0001
+date:   2021-12-07 18:044:00 +0000
 categories: tla
 ---
 
