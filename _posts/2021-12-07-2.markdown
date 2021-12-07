@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Lower bound on worst case read-write register in message passing system"
+title:  "Lower bound (time) on worst case read-write register in message passing system"
 date:   2021-12-07 18:045:00 +0000
 categories: distributed_algorithms
 ---
