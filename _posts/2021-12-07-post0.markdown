@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TLA+ talk video: Specification and Model Checking of the Agoric Smart Contracts Kernel"
+title:  "TLA+ talk video; Specification and Model Checking of the Agoric Smart Contracts Kernel"
 date:   2021-12-07 18:043:00 +0000
 categories: tla
 ---
