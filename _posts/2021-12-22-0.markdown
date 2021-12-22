@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "TLA+ basics tutorial"
+date:   2021-12-22 18:00:00 +0000
+categories: tla
+---
+
+A couple of weeks ago I created some tutorial materials for beginners to TLA+. Find the full writeup [here](https://mbt.informal.systems/docs/tla_basics_tutorials/tutorial.html) or markdown with syntax highlighting [here](https://github.com/informalsystems/modelator/tree/main/jekyll/docs/tla_basics_tutorials).
+
+[wayback machine](https://web.archive.org/web/20211222144057/https://mbt.informal.systems/docs/tla_basics_tutorials/tutorial.html)
