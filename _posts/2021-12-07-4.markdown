@@ -5,11 +5,11 @@ date:   2021-12-07 20:25:00 +0000
 categories: distributed_algorithms
 ---
 
-Consider an asynchronous shared memory model with no process failures. Approximate agreement between _n_ processes is the problem of agreeing _n_ output values within _eps_ of each other, and falling in the interval [min(input values), max(output values)].
+Consider an asynchronous shared memory model with no process failures. Approximate agreement between _n_ processes is the problem of agreeing _n_ output values within _eps_ of each other, and falling in the interval [min(input values), max(input values)].
 
 Consider a solution implementing approximate agreement for _n_ input values (one per process) in {0, 1} and _eps_ < 1. If the solution also provides solo termination (each process will terminate if run sufficiently long) then the time complexity is at least _n_.
 
-For contradiction suppose it is possible in less than _n_ steps. 
+For contradiction suppose it is possible in less than _n_ steps.
 
 Take two solo executions of Pi and Pj starting at a configuration C where all registers are empty and the input values of Pi and Pj are 0 and 1. Since they are solo executions, by validity, the outputs must be 0 and 1.
 

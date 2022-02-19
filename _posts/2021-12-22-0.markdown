@@ -7,4 +7,4 @@ categories: tla
 
 A couple of weeks ago I created some tutorial materials for beginners to TLA+. Find the full writeup [here](https://mbt.informal.systems/docs/tla_basics_tutorials/tutorial.html) or markdown with syntax highlighting [here](https://github.com/informalsystems/modelator/tree/main/jekyll/docs/tla_basics_tutorials).
 
-#### [(permalink)](https://web.archive.org/web/20211222144057/https://mbt.informal.systems/docs/tla_basics_tutorials/tutorial.html)
+#### [tutorials (permalink)](https://web.archive.org/web/20211222144057/https://mbt.informal.systems/docs/tla_basics_tutorials/tutorial.html)
