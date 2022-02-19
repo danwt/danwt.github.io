@@ -9,7 +9,6 @@ Consider a read/write register in a message passing model with discrete time. If
 
 d <= R + W.
 
-For contradiction suppose the opposite. If P0 WRITEs at t=0 and P1 READs at t=W then by R+W P1's READ has returned. P1 cannot in the worst case distinguish executions where P0 did WRITE(1) or WRITE(2) if R+W < d: contradiction.
-
+For contradiction, suppose the opposite. If P0 WRITEs at t=0 and P1 READs at t=W then by R+W P1's READ has returned. P1 cannot in the worst case distinguish executions where P0 did WRITE(1) or WRITE(2) if R+W < d, as the message will not have reached him: contradiction.
 
 #### Paraphrased with liberty from [Hagit Attiya; Faith Ellen, Impossibility Results for Distributed Computing , Morgan & Claypool, 2014.](https://ieeexplore.ieee.org/document/6855592/)

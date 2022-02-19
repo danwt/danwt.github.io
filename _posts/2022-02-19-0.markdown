@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Replication: Theory and Practice - primary backup replication"
+date:   2022-02-19 12:33:00 +0000
+categories: distributed_algorithms
+---
+
+I'm starting a read through of this book from 2010 containing lecture notes on state replication. I created a TLA+ model of what is probably the simplest algorithm used to replicate an object in an asynchronous message passing model with crash stop failures. The communication is FIFO and reliable (up to crashes). The only requirement on the algorithm is a failure detector. The algorithm is called Primary Backup.
+
+A client writes or queries an object by calling to a primary process. The primary process syncs the call to other (replica) processes, and returns to the client only once responses from all replicas have been received. In the case of failure, the new primary is chosen simply based on next highest ID.
+
+The description in the book uses an object which is a complete history of operations, but I model a one-shot integer write for simplicity.
+
+#### [Replication, Theory and Practice (Springer)](https://link.springer.com/book/10.1007/978-3-642-11294-2)
