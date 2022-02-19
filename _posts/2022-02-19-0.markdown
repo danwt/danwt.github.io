@@ -11,7 +11,11 @@ A client writes or queries an object by calling to a primary process. The primar
 
 The description in the book uses an object which is a complete history of operations, but I model a one-shot integer write for simplicity.
 
-```tla
+#### [Replication, Theory and Practice (Springer)](https://link.springer.com/book/10.1007/978-3-642-11294-2)
+
+#### [The full TLA+ model](https://github.com/danwt/primary-backup-replication)
+
+```
 VARIABLES
 (*Meta*)
     \* @type: Str;
@@ -209,7 +213,3 @@ Agreement ==
         /\ \A p \in SERVERS: crashed[p] \/ value[p] = TargetValue
         /\ value[CLIENT] = TargetValue
 ```
-
-#### [Replication, Theory and Practice (Springer)](https://link.springer.com/book/10.1007/978-3-642-11294-2)
-
-#### [The full TLA+ model](https://github.com/danwt/primary-backup-replication)
