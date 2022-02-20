@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Large-scale Incremental Processing Using Distributed Transactions and Notifications a.k.a. Percolator"
+date:   2022-02-20 15:39:00 +0000
+categories: distributed_algorithms
+published: false
+---
+
+I've had this paper on my to-read list for a while, apparently it made a splash in the transaction processing world. Google presents Percolator, a system that provides random concurrent access to a multi petabyte repository while maintaining invariants. Beware, the paper is from 2010, so I assume it is no longer state of the art.
+
+#### [Large-scale Incremental Processing Using Distributed Transactions and Notifications](https://research.google/pubs/pub36726/)
+
+#### [Percolator at TiKV](0https://tikv.org/deep-dive/distributed-transaction/percolator/)
+
+#### [Percolator by Marc Bojoly](https://blog.octo.com/my-reading-of-percolator-architecture-a-google-search-engine-component/)
