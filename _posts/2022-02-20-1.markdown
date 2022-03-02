@@ -6,10 +6,28 @@ categories: distributed_algorithms
 published: false
 ---
 
-I've had this paper on my to-read list for a while, apparently it made a splash in the transaction processing world. Google presents Percolator, a system that provides random concurrent access to a multi petabyte repository while maintaining invariants. Beware, the paper is from 2010, so I assume it is no longer state of the art.
+I've had this paper on my to-read list for a while, apparently it made a splash in the transaction processing world. Google presents Percolator, a system that provides random concurrent access to a multi petabyte repository while maintaining invariants. Beware: the paper is from 2010, so it might not be state of the art anymore.
+
+Percolator requires a layer beneath it. The layer provides access to values with tuple keys. The keys are made of row, column and timestamp. The layer provides atomic read/write access to single rows. Additionally, Percolator requires a global monotonically increasing timestamp oracle.
+
+Given a reliable base layer, Percolator provides multi-row transactions with snapshot isolation, in the presence of client failures.
+
+## Definition reminder
+
+**Snapshot Isolation:** each transaction reads a data snapshot from a start timestamp. The start timestamp is taken between the start of the transaction and the transaction's first read. A transaction running in Snapshot Isolation is never blocked while reading. Write-write conflict is not allowed and will cause a transaction to abort.
+
+## Algorithm
+
+TODO:see my tla
+
+## Rollback and rollforward
+
+TODO:see my tla
 
 #### [Large-scale Incremental Processing Using Distributed Transactions and Notifications](https://research.google/pubs/pub36726/)
 
-#### [Percolator at TiKV](0https://tikv.org/deep-dive/distributed-transaction/percolator/)
+#### [Percolator at TiKV](https://tikv.org/deep-dive/distributed-transaction/percolator/)
 
 #### [Percolator by Marc Bojoly](https://blog.octo.com/my-reading-of-percolator-architecture-a-google-search-engine-component/)
+
+#### [A Critique of ANSI SQL Isolation Levels](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-95-51.pdf)
