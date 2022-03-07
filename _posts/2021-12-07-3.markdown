@@ -2,10 +2,10 @@
 layout: post
 title:  "Lower bound (space) on FIFO mutual exclusion in shared memory"
 date:   2021-12-07 20:25:00 +0000
-categories: distributed_algorithms
+categories: concurrent_algorithms
 ---
 
-Consider an asynchronous shared memory model with no process failures. FIFO mutual exclusion provides a critical section as usual. Additionally: 
+Consider an asynchronous shared memory model with no process failures. FIFO mutual exclusion provides a critical section as usual. Additionally:
 
 1. there is a doorway section when acquiring the resource. Processes enter the CS in order of completing the doorway section.
 2. there is deadlock freedom.

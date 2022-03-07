@@ -2,7 +2,7 @@
 layout: post
 title:  "Primary Backup Replication"
 date:   2022-02-19 12:33:00 +0000
-categories: distributed_algorithms
+categories: concurrent_algorithms
 ---
 
 I'm starting a read through of this book from 2010 containing lecture notes on state replication. I created a TLA+ model of what is probably the simplest algorithm used to replicate an object in an asynchronous message passing model with crash stop failures. The communication is FIFO and reliable (up to crashes). The requirement on the algorithm is a perfect failure detector. The algorithm is called Primary Backup.

@@ -2,7 +2,7 @@
 layout: post
 title:  "Lower bound (time) on approximate agreement in shared memory"
 date:   2021-12-07 20:25:00 +0000
-categories: distributed_algorithms
+categories: concurrent_algorithms
 ---
 
 Consider an asynchronous shared memory model with no process failures. Approximate agreement between _n_ processes is the problem of agreeing _n_ output values within _eps_ of each other, and falling in the interval [min(input values), max(input values)].

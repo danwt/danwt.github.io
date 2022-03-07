@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Large-scale Incremental Processing Using Distributed Transactions and Notifications a.k.a. Percolator"
-date:   2022-02-20 15:39:00 +0000
-categories: distributed_algorithms
+date:   2022-05-03 19:12:00 +0000
+categories: concurrent_algorithms
 published: false
 ---
 

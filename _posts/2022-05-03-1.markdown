@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Amazon Builders' Library. TLDR;"
+date:   2022-05-03 19:12:00 +0000
+categories: Software Engineering
+published: false
+---
+
+AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. In this blog post I trim the fat and aim to summarize each article in two paragraphs. I'll go in reverse alphabetical order, because why not? I downloaded the PDFs on March 5th 2022 so I won't include any articles posted after the date.
+
+## Using load shedding to avoid overload - David Yanacek
+
+Shed requests which would cause load to get too high and lead to a tumbling performance degredation. Don't forget to filter out the latency measurements for rejected requests from your latency measurements of client rpc calls. Also, make sure that the shedding threshold is not set lower than the reactive scaling threshold, because then the reactive scaling will not trigger.
+
+Drop doomed requests by making clients include a timeout hint, when the timeout is reached server-side, kill it.
+
+#### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
