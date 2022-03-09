@@ -6,12 +6,16 @@ categories: Software Engineering
 published: false
 ---
 
-AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. In this blog post I trim the fat and aim to summarize each article in two paragraphs. I'll go in reverse alphabetical order, because why not? I downloaded the PDFs on March 5th 2022 so I won't include any articles posted after the date.
+AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I trimmed the fat and aimed to summarize each article in two paragraphs. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
 
 ## Using load shedding to avoid overload - David Yanacek
 
-Shed requests which would cause load to get too high and lead to a tumbling performance degredation. Don't forget to filter out the latency measurements for rejected requests from your latency measurements of client rpc calls. Also, make sure that the shedding threshold is not set lower than the reactive scaling threshold, because then the reactive scaling will not trigger.
+Tips for not killing your services by overloading them.
 
-Drop doomed requests by making clients include a timeout hint, when the timeout is reached server-side, kill it.
+- Shed requests which would cause load to get too high and lead to a cascading performance degradation. Don't forget to filter out the latency measurements for rejected requests from your latency measurements of client rpc calls. Also, make sure that the shedding threshold is not set lower than the reactive scaling threshold. If you don't, the reactive scaling will not trigger.
+
+Drop doomed requests by making clients include a timeout hint and when the timeout is reached server-side, kill the request. Make the timeout hint transitive by subtracting the time taken by each service before passing the request downstream. Be aware of clock sync issues there. Similarly, check a request to see if it has been sitting in a queue for a long time, before starting to work on it. Throw it out if it's too old, in order to get to the fresher requests sooner.
+
+Pagination helps to avoid wasted work and makes it easier to estimate the time to respond to a request. Return an iterator or similar instead of a large result. When API's are multi-step and include, for example, `start` and `end` calls, prioritize `end` calls to make sure that clients who began their request are able to finish them.
 
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
