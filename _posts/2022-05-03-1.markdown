@@ -28,6 +28,12 @@ The image shows a configuration where each client is assigned two workers. Even 
 
 The technique is especially useful if resource failure is correlated to the client. For instance, if the client is a server who comes under DDOS attack then all their workers may fail fast.
 
-[implementation](https://github.com/awslabs/route53-infima)
+## Timeouts, retries, and backoff with jitter - Marc Brooker
+
+Use capped exponential backoff to avoid overloading a system with retires. You can combine this with a token bucket algorithm for requests. Also, add jitter to any timers in the system, but make it deterministic, not random, in order to not end up in debugging hell.
+
+## Static stability using Availability Zones - Becky Weiss, Mike Furr
 
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
+
+#### [Shuffle Sharding Implementation](https://github.com/awslabs/route53-infima)
