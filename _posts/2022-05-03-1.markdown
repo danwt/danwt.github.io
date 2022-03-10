@@ -18,4 +18,16 @@ Drop doomed requests by making clients include a timeout hint and when the timeo
 
 Pagination helps to avoid wasted work and makes it easier to estimate the time to respond to a request. Return an iterator or similar instead of a large result. When API's are multi-step and include, for example, `start` and `end` calls, prioritize `end` calls to make sure that clients who began their request are able to finish them.
 
+## Workload isolation using shuffle-sharding - Colm MacCárthaigh
+
+Shuffle sharding is a technique to improve the reliability of a fleet of clients who may share common resources or logical dependencies. For example, if you have a number of clients who need work done, and a number of workers, you would like to match clients to workers in a many-to-many fashion such that the failure of an individual worker effects as few clients as possible. Concretely, if you have _n_ clients and _m_ workers and each client requires _k_ workers with _k_ < _m_ then you should should try to make sure that the size of the overlap between the sets of _k_ workers assigned to any two clients is minimized.
+
+![]({{ site.url }}/assets/2022-05-03-1/shuffle_sharding.png)
+
+The image shows a configuration where each client is assigned two workers. Even if the two workers of a single client fail, the other clients will both still have a single functioning worker.
+
+The technique is especially useful if resource failure is correlated to the client. For instance, if the client is a server who comes under DDOS attack then all their workers may fail fast.
+
+[implementation](https://github.com/awslabs/route53-infima)
+
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)

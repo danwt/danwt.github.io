@@ -1,4 +1,4 @@
-# Original theme thanks to [samarsault](https://github.com/samarsault)! :
+# Original theme thanks to [samarsault](https://github.com/samarsault)!
 
 ## plainwhite
 
@@ -32,11 +32,11 @@ theme: plainwhite
 
 And then execute:
 
-    $ bundle
+    bundle
 
 Or install it yourself as:
 
-    $ gem install plainwhite
+    gem install plainwhite
 
 ## Usage
 
@@ -199,7 +199,7 @@ plainwhite:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/samarsault/plainwhite-jekyll. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at <https://github.com/samarsault/plainwhite-jekyll>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 
@@ -221,3 +221,7 @@ The theme is available as open source under the terms of the [MIT License](https
 ## More themes
 
 - [Texture](https://github.com/samarsault/texture)
+
+## Serve
+
+`docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve`
