@@ -34,6 +34,20 @@ Use capped exponential backoff to avoid overloading a system with retires. You c
 
 ## Static stability using Availability Zones - Becky Weiss, Mike Furr
 
+Define static stability as being stable in the face of failure, without needing to reactively provision more resources. In practice this means having additional resources on standby such that when a failure occurs, the service can use the reserve resources while the failed resources are replaced.
+
+## Reliability, constant work, and a good cup of coffee - Colm MacCárthaigh
+
+Improve stability by always doing the same (maximum) amount of work instead of varying and scaling up the amount of work. If there isn't much work to be done then create dummy work. The reduced workload variance is more predictable and there will be fewer ways for your system to fail in a cascade. A good example is to have a downstream service read configurations from an upstream service in a loop instead of having the upstream service push a new configuration on changes. The solution requires less logic and savings in dev and maintenance cost cans outweigh the cost of additional work.
+
+## Minimizing correlated failures in distributed systems - Joe Mageramov
+
+Use random jitter across many time based operations to reduce the chance of correlated failures. It's a good idea to use a value such as the server IP address as a seed to help with debugging.
+
+## Making retries safe with idempotent APIs - Malcolm Featonby
+
+For particular services it is worth publishing an idempotency contract. The API contains a `clientToken` parameter, which identifies client requests. The service caches requests and their results and returns cached results in the case that a duplicate `clientToken` is received. Furthermore, the parameters of the requests are stored too, and if the `clientToken` matches but the parameters are different, then the service returns an error. In this way it is assumed that the client made an error if sending two differently parameterized requests with the same token.
+
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
 #### [Shuffle Sharding Implementation](https://github.com/awslabs/route53-infima)
