@@ -6,7 +6,7 @@ categories: sweng
 published: false
 ---
 
-AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I trimmed the fat and aimed to summarize each article in two paragraphs. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
+AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I trimmed the fat and aimed to summarize each article in two paragraphs. Some of the articles are useful, some less so. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
 
 ## Using load shedding to avoid overload - David Yanacek
 
@@ -46,7 +46,13 @@ Use random jitter across many time based operations to reduce the chance of corr
 
 ## Making retries safe with idempotent APIs - Malcolm Featonby
 
-For particular services it is worth publishing an idempotency contract. The API contains a `clientToken` parameter, which identifies client requests. The service caches requests and their results and returns cached results in the case that a duplicate `clientToken` is received. Furthermore, the parameters of the requests are stored too, and if the `clientToken` matches but the parameters are different, then the service returns an error. In this way it is assumed that the client made an error if sending two differently parameterized requests with the same token.
+For particular services it is worth publishing an idempotency contract. The API contains a `clientToken` parameter, which identifies client requests. The service caches requests and their results and returns cached results in the case that a duplicate `clientToken` is received. Furthermore, the parameters of the requests are stored too, and if the `clientToken` matches but the parameters are different, then the service returns an error. In this way it is assumed that the client made an error if sending two differently parameterized requests with the same token. Amazon found it reasonable to expire cached results after a certain time.
+
+## Leader election in distributed systems - Marc Brooker
+
+Use a distributed lock service to elect a leader. The devil is in the details of course...
+
+## Instrumenting distributed systems for operational visibility - David Yanacek
 
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
