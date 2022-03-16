@@ -10,9 +10,9 @@ AWS publishes a collection of PDFs containing tips and tricks for building scala
 
 ## Using load shedding to avoid overload - David Yanacek
 
-Tips for not killing your services by overloading them.
+Tips for not killing your services by overloading them:
 
-- Shed requests which would cause load to get too high and lead to a cascading performance degradation. Don't forget to filter out the latency measurements for rejected requests from your latency measurements of client rpc calls. Also, make sure that the shedding threshold is not set lower than the reactive scaling threshold. If you don't, the reactive scaling will not trigger.
+Shed requests which would cause load to get too high and lead to a cascading performance degradation. Don't forget to filter out the latency measurements for rejected requests from your latency measurements of client rpc calls. Also, make sure that the shedding threshold is not set lower than the reactive scaling threshold. If you don't, the reactive scaling will not trigger.
 
 Drop doomed requests by making clients include a timeout hint and when the timeout is reached server-side, kill the request. Make the timeout hint transitive by subtracting the time taken by each service before passing the request downstream. Be aware of clock sync issues there. Similarly, check a request to see if it has been sitting in a queue for a long time, before starting to work on it. Throw it out if it's too old, in order to get to the fresher requests sooner.
 

@@ -13,7 +13,7 @@ The description in the book uses an object which is a complete history of operat
 
 It would be interesting to model a fully fledged version of chain replication, with repeated client updates and queries. A more comprehensive model could check liveness too.
 
-![]({{ site.url }}/assets/2022-02-20-0/diagram.png)
+![]({{ site.url }}/assets/2022-02-20-0/chain_replication.png)
 
 #### [Replication, Theory and Practice (Springer)](https://link.springer.com/book/10.1007/978-3-642-11294-2)
 
