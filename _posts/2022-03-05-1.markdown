@@ -62,6 +62,12 @@ Verbosely log systems to help you and your clients to debug and anticipate probl
 - Rotate logs more frequently in order to spread out the work done to transfer or compress the data and avoid spikes in resource utilization, even if this results in slightly more work overall.
 - Use opt-in for logging sensitive data, this prevents the scenario where you accidentally add sensitive data to a log, if using opt-out.
 
+## Implementing health checks - David Yanacek
+
+Ensure servers provide their software version in health checks so that zombie servers, servers that have been disconnected for a long time and then reconnect, are detected. Additionally beware the black hole phenomenon, in which a failed server responds to requests faster than other servers, and thus takes a larger proportion of work from the load balancer.
+
+## Going faster with continuous delivery - Mark Mansour
+
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
 #### [Shuffle Sharding Implementation](https://github.com/awslabs/route53-infima)
