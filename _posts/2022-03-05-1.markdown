@@ -68,6 +68,10 @@ Ensure servers provide their software version in health checks so that zombie se
 
 ## Going faster with continuous delivery - Mark Mansour
 
+This must an old article: it just gives some basic CI/CD ideas which I won't repeat.
+
+## Fairness in multi-tenant systems - David Yanacek
+
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
 #### [Shuffle Sharding Implementation](https://github.com/awslabs/route53-infima)
