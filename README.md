@@ -1,4 +1,4 @@
-# Original theme thanks to [samarsault](https://github.com/samarsault)!
+# Original theme thanks to [samarsault](https://github.com/samarsault)
 
 ## plainwhite
 
@@ -224,4 +224,6 @@ The theme is available as open source under the terms of the [MIT License](https
 
 ## Serve
 
-`docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve`
+```
+docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve
+```

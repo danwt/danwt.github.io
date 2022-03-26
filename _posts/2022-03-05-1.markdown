@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Amazon Builders' Library. TLDR;"
+title:  "Amazon Builder's Library. TLDR;"
 date:   2022-03-05 19:12:00 +0000
 categories: sweng
 published: false
 ---
 
-AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I trimmed the fat and aimed to summarize each article in two paragraphs. Some of the articles are useful, some less so. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
+AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in two paragraphs. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
 
 ## Using load shedding to avoid overload - David Yanacek
 
@@ -53,6 +53,14 @@ For particular services it is worth publishing an idempotency contract. The API 
 Use a distributed lock service to elect a leader. The devil is in the details of course...
 
 ## Instrumenting distributed systems for operational visibility - David Yanacek
+
+Verbosely log systems to help you and your clients to debug and anticipate problems. In particular
+
+- Prefer to pass around trace id's to help connect log statements between services.
+- Pass around metric aggregation objects to be able to log a comprehensible set of metrics at the end of a processing pipeline.
+- Test logging at max throughput and consider logging to different disk partitions, logging to a ramdisk or temporary file system, or writing compressed logs. If writing compressed logs be sure to use a compression algorithm that can handle truncation.
+- Rotate logs more frequently in order to spread out the work done to transfer or compress the data and avoid spikes in resource utilization, even if this results in slightly more work overall.
+- Use opt-in for logging sensitive data, this prevents the scenario where you accidentally add sensitive data to a log, if using opt-out.
 
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
