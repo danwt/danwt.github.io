@@ -6,7 +6,7 @@ categories: sweng
 published: false
 ---
 
-AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in two paragraphs. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
+AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in two paragraphs or so. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
 
 ## Using load shedding to avoid overload - David Yanacek
 
@@ -22,7 +22,7 @@ Pagination helps to avoid wasted work and makes it easier to estimate the time t
 
 Shuffle sharding is a technique to improve the reliability of a fleet of clients who may share common resources or logical dependencies. For example, if you have a number of clients who need work done, and a number of workers, you would like to match clients to workers in a many-to-many fashion such that the failure of an individual worker effects as few clients as possible. Concretely, if you have _n_ clients and _m_ workers and each client requires _k_ workers with _k_ < _m_ then you should should try to make sure that the size of the overlap between the sets of _k_ workers assigned to any two clients is minimized.
 
-![]({{ site.url }}/assets/2022-05-03-1/shuffle_sharding.png)
+![]({{ site.url }}/assets/2022-05-03-1/shuffle_sharding.png){: width="75%" }
 
 The image shows a configuration where each client is assigned two workers. Even if the two workers of a single client fail, the other clients will both still have a single functioning worker.
 
@@ -64,14 +64,30 @@ Verbosely log systems to help you and your clients to debug and anticipate probl
 
 ## Implementing health checks - David Yanacek
 
-Ensure servers provide their software version in health checks so that zombie servers, servers that have been disconnected for a long time and then reconnect, are detected. Additionally beware the black hole phenomenon, in which a failed server responds to requests faster than other servers, and thus takes a larger proportion of work from the load balancer.
+Ensure servers provide their software version in health checks so that zombie servers, servers that have been disconnected for a long time and then reconnect, are detected. Additionally, beware the black hole phenomenon, where a failed server responds to requests faster than other servers, and thus takes a larger portion of work from the load balancer.
 
 ## Going faster with continuous delivery - Mark Mansour
 
-This must an old article: it just gives some basic CI/CD ideas which I won't repeat.
+This must be an old article: it gives commonplace CI/CD ideas.
 
 ## Fairness in multi-tenant systems - David Yanacek
+
+Use token-bucket like algorithms to quota clients. It can be a good idea to give tenants greater quotas when their provisioned service initially starts up, as the workload may be higher due to downloading updates and installing packages, ect. Using quotas raises the question of how to scale quota tracking services: use consistent hashing to associate rate quota lookup keys for different clients to different lookup servers in order to scale out a service that tracks quotas for a large number of clients. Additionally, use algorithms like Heavy Hitter, Top Talkers and Counting Bloom Filters to set an upper bound on the memory used.
+
+Here are the algorithms:
+
+TODO:
+
+## Ensuring rollback safety during deployments - Sandeep Pokkunuri
+
+Deploy changes to fleets of services using Two Phase Deployment: make two waves of changes, where the first wave ensures backwards compatibility with the current state and also forwards compatibility with the changes made in the second wave. That way, the second wave of changes can be rolled back and the system will not suffer any residual damage, as the first wave will have ensured forward compatibility.
+
+For example, if you are upgrading communication to use Json instead of XML then first upgrade servers to be able to read json, and only then upgrade them to also write json.
+
+Do test the ability to roll changes forward _and_ backwards, in a production-like test environment beforehand.
 
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
 #### [Shuffle Sharding Implementation](https://github.com/awslabs/route53-infima)
+
+TODO: Add papers from 'Fairness in multi-tenant systems'
