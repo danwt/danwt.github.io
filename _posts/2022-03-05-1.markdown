@@ -3,7 +3,7 @@ layout: post
 title:  "Amazon Builder's Library. TLDR;"
 date:   2022-03-05 19:12:00 +0000
 categories: sweng
-published: true
+published: false
 ---
 
 AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in two paragraphs or so. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
@@ -80,15 +80,15 @@ TODO:
 
 ## Ensuring rollback safety during deployments - Sandeep Pokkunuri
 
-Deploy changes to fleets of services using Two Phase Deployment: make two waves of changes, where the first wave ensures backwards compatibility with the current state and also forwards compatibility with the changes made in the second wave. That way, the second wave of changes can be rolled back and the system will not suffer any residual damage, as the first wave will have ensured forward compatibility.
+Deploy changes to fleets of services using Two Phase Deployment: make two waves of changes. The first wave ensures backwards compatibility with the initial state and forwards compatibility with the changes made in the second wave. That way, the second wave of changes can be rolled back and the system will not suffer any residual damage, as the first wave will have ensured forward compatibility.
 
-For example, if you are upgrading communication to use Json instead of XML then first upgrade servers to be able to read json, and only then upgrade them to also write json.
+For example, if you are upgrading communication to use Json instead of XML then first upgrade servers to be able to read Json, and only then upgrade them to also write Json.
 
 Do test the ability to roll changes forward _and_ backwards, in a production-like test environment beforehand.
 
 ## Challenges with distributed systems - Jacob Gabrielson
 
-I skipped this.
+I skipped this article about why distributed systems are hard.
 
 ## Caching challenges and strategies - Matt Brinkley, Jas Chhabra
 
