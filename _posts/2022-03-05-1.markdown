@@ -3,7 +3,7 @@ layout: post
 title:  "Amazon Builder's Library. TLDR;"
 date:   2022-03-05 19:12:00 +0000
 categories: sweng
-published: false
+published: true
 ---
 
 AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in two paragraphs or so. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
@@ -72,7 +72,7 @@ This must be an old article: it gives commonplace CI/CD ideas.
 
 ## Fairness in multi-tenant systems - David Yanacek
 
-Use token-bucket like algorithms to quota clients. It can be a good idea to give tenants greater quotas when their provisioned service initially starts up, as the workload may be higher due to downloading updates and installing packages, ect. Using quotas raises the question of how to scale quota tracking services: use consistent hashing to associate rate quota lookup keys for different clients to different lookup servers in order to scale out a service that tracks quotas for a large number of clients. Additionally, use algorithms like Heavy Hitter, Top Talkers and Counting Bloom Filters to set an upper bound on the memory used.
+Use token-bucket like algorithms to quota clients. It can be a good idea to give tenants greater quotas when their provisioned service initially starts up, as the workload may be higher due to downloading updates and installing packages, ect. Using quotas raises the question of how to scale quota tracking services: use consistent hashing to associate quota lookup keys for different clients to different lookup servers. Additionally, use algorithms like Heavy Hitter, Top Talkers and Counting Bloom Filters to set an upper bound on the memory used.
 
 Here are the algorithms:
 
