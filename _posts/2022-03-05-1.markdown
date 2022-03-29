@@ -86,6 +86,12 @@ For example, if you are upgrading communication to use Json instead of XML then 
 
 Do test the ability to roll changes forward _and_ backwards, in a production-like test environment beforehand.
 
+## Challenges with distributed systems - Jacob Gabrielson
+
+I skipped this.
+
+## Caching challenges and strategies - Matt Brinkley, Jas Chhabra
+
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
 #### [Shuffle Sharding Implementation](https://github.com/awslabs/route53-infima)
