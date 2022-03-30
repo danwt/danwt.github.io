@@ -92,6 +92,14 @@ I skipped this article about why distributed systems are hard.
 
 ## Caching challenges and strategies - Matt Brinkley, Jas Chhabra
 
+You can broadly differentiate caching strategies by cache placement. You could place a standalone (on-box) cache in front of each server of a target service, or you could have a separate caching service (external) in front of the target service. With the on-box approach, you have to deal with cache coherence problems. It's easier to offer consistency using the external approach but it implies maintaining another service.
+
+For all caching solutions, consider using soft and hard time-to-live values. Clients will try to refresh cached values when the soft TTL expires, but can rely on reading cached values until the hard TTL expires. This also lets services that need a break apply backpressure, by telling clients to ignore the soft TTL until the hard TTL expires.
+
+Do not forget to cache negative values, that is: cache error messages or other values associated to failed requests to the target service. Otherwise, a failed target service will not be relieved by the cache if it fails. In addition to caching negative values, implement request coalescing where some logic ensures at most one instance of a request to the target service may be outstanding at any time.
+
+Do test your cached systems to see what happens if the cache fails or requires rebooting (and repopulating) and also the impact of adding and removing cache nodes, as consistent hashing implementations and their properties may differ between cache products. Also be aware of security issues; caches are targets for attackers trying to populate them with values under their control, and the difference between response time for cached and non-cached requests can give observers information (side channel attack).
+
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
 #### [Shuffle Sharding Implementation](https://github.com/awslabs/route53-infima)
