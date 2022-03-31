@@ -88,7 +88,7 @@ Do test the ability to roll changes forward _and_ backwards, in a production-lik
 
 ## Challenges with distributed systems - Jacob Gabrielson
 
-I skipped this article about why distributed systems are hard.
+I skipped this.
 
 ## Caching challenges and strategies - Matt Brinkley, Jas Chhabra
 
@@ -99,6 +99,8 @@ For all caching solutions, consider using soft and hard time-to-live values. Cli
 Do not forget to cache negative values, that is: cache error messages or other values associated to failed requests to the target service. Otherwise, a failed target service will not be relieved by the cache if it fails. In addition to caching negative values, implement request coalescing where some logic ensures at most one instance of a request to the target service may be outstanding at any time.
 
 Do test your cached systems to see what happens if the cache fails or requires rebooting (and repopulating) and also the impact of adding and removing cache nodes, as consistent hashing implementations and their properties may differ between cache products. Also be aware of security issues; caches are targets for attackers trying to populate them with values under their control, and the difference between response time for cached and non-cached requests can give observers information (side channel attack).
+
+## Building dashboards for operational visibility - John O'Shea
 
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
