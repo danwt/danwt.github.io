@@ -88,7 +88,7 @@ Do test the ability to roll changes forward _and_ backwards, in a production-lik
 
 ## Challenges with distributed systems - Jacob Gabrielson
 
-I skipped this.
+I skipped it.
 
 ## Caching challenges and strategies - Matt Brinkley, Jas Chhabra
 
@@ -101,6 +101,14 @@ Do not forget to cache negative values, that is: cache error messages or other v
 Do test your cached systems to see what happens if the cache fails or requires rebooting (and repopulating) and also the impact of adding and removing cache nodes, as consistent hashing implementations and their properties may differ between cache products. Also be aware of security issues; caches are targets for attackers trying to populate them with values under their control, and the difference between response time for cached and non-cached requests can give observers information (side channel attack).
 
 ## Building dashboards for operational visibility - John O'Shea
+
+The article contains wisdom on making good dashboards. Forgoing a summary, I suggest reading a dedicated UX design book instead.
+
+## Avoiding insurmountable queue backlogs -  David Yanacek
+
+Processing failures can quickly lead to large queue backlogs. If just adding extra processing capacity is not enough to clear the backlog quickly then it might be worth using other techniques. For example, depending on the contract with the clients, you may switch queues to LIFO mode when a backlog builds up and transfer part of the backlog to other queues.
+
+## Avoiding fallback in distributed systems -- Jacob Gabrielson
 
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
