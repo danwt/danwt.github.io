@@ -3,7 +3,7 @@ layout: post
 title:  "Amazon Builder's Library. TLDR;"
 date:   2022-03-05 19:12:00 +0000
 categories: sweng
-published: true
+published: false
 ---
 
 AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in around two paragraphs. I downloaded the PDFs on March 5th 2022, so any articles posted after that date aren't included.
