@@ -3,10 +3,10 @@ layout: post
 title:  "Amazon Builder's Library. TLDR;"
 date:   2022-03-05 19:12:00 +0000
 categories: sweng
-published: false
+published: true
 ---
 
-AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in two paragraphs or so. I downloaded the PDFs on March 5th 2022 so any articles posted after that date aren't included.
+AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in around two paragraphs. I downloaded the PDFs on March 5th 2022, so any articles posted after that date aren't included.
 
 ## Using load shedding to avoid overload - David Yanacek
 
@@ -14,7 +14,7 @@ Tips for not killing your services by overloading them:
 
 Shed requests which would cause load to get too high and lead to a cascading performance degradation. Don't forget to filter out the latency measurements for rejected requests from your latency measurements of client rpc calls. Also, make sure that the shedding threshold is not set lower than the reactive scaling threshold. If you don't, the reactive scaling will not trigger.
 
-Drop doomed requests by making clients include a timeout hint and when the timeout is reached server-side, kill the request. Make the timeout hint transitive by subtracting the time taken by each service before passing the request downstream. Be aware of clock sync issues there. Similarly, check a request to see if it has been sitting in a queue for a long time, before starting to work on it. Throw it out if it's too old, in order to get to the fresher requests sooner.
+Drop doomed requests by making clients include a timeout hint. When the timeout is reached server-side, kill the request. Make the timeout hint relevant by subtracting the time taken by each service before passing the request downstream. Be aware of clock sync issues there. Similarly, check a request to see if it has been sitting in a queue for a long time, before starting to work on it. Throw it out if it's too old, in order to get to the fresher requests sooner.
 
 Pagination helps to avoid wasted work and makes it easier to estimate the time to respond to a request. Return an iterator or similar instead of a large result. When API's are multi-step and include, for example, `start` and `end` calls, prioritize `end` calls to make sure that clients who began their request are able to finish them.
 
@@ -26,11 +26,11 @@ Shuffle sharding is a technique to improve the reliability of a fleet of clients
 
 The image shows a configuration where each client is assigned two workers. Even if the two workers of a single client fail, the other clients will both still have a single functioning worker.
 
-The technique is especially useful if resource failure is correlated to the client. For instance, if the client is a server who comes under DDOS attack then all their workers may fail fast.
+The technique is more useful if resource failure is correlated to a client. For instance, if a client is a server who comes under DDOS attack then their workers may fail quickly.
 
 ## Timeouts, retries, and backoff with jitter - Marc Brooker
 
-Use capped exponential backoff to avoid overloading a system with retires. You can combine this with a token bucket algorithm for requests. Also, add jitter to any timers in the system, but make it deterministic, not random, in order to not end up in debugging hell.
+Use capped exponential backoff to avoid overloading a system with retries. Combine this with a token bucket algorithm. Also, add jitter to any timers in the system, but make it deterministic, not random, to make debugging easier.
 
 ## Static stability using Availability Zones - Becky Weiss, Mike Furr
 
@@ -54,7 +54,7 @@ Use a distributed lock service to elect a leader. The devil is in the details of
 
 ## Instrumenting distributed systems for operational visibility - David Yanacek
 
-Verbosely log systems to help you and your clients to debug and anticipate problems. In particular
+Log systems verbosely to help you and your clients debug and anticipate problems. In particular
 
 - Prefer to pass around trace id's to help connect log statements between services.
 - Pass around metric aggregation objects to be able to log a comprehensible set of metrics at the end of a processing pipeline.
@@ -84,7 +84,7 @@ Deploy changes to fleets of services using Two Phase Deployment: make two waves 
 
 For example, if you are upgrading communication to use Json instead of XML then first upgrade servers to be able to read Json, and only then upgrade them to also write Json.
 
-Do test the ability to roll changes forward _and_ backwards, in a production-like test environment beforehand.
+Do test the ability to roll changes forward _and_ backwards, in a production-like test environment.
 
 ## Challenges with distributed systems - Jacob Gabrielson
 
@@ -94,21 +94,24 @@ I skipped it.
 
 You can broadly differentiate caching strategies by cache placement. You could place a standalone (on-box) cache in front of each server of a target service, or you could have a separate caching service (external) in front of the target service. With the on-box approach, you have to deal with cache coherence problems. It's easier to offer consistency using the external approach but it implies maintaining another service.
 
-For all caching solutions, consider using soft and hard time-to-live values. Clients will try to refresh cached values when the soft TTL expires, but can rely on reading cached values until the hard TTL expires. This also lets services that need a break apply backpressure, by telling clients to ignore the soft TTL until the hard TTL expires.
+For all caching solutions, consider using soft and hard time-to-live values. Clients will try to refresh cached values when the soft TTL expires, but can rely on reading cached values until the hard TTL expires. This also lets stressed services apply backpressure, by telling clients to ignore the soft TTL until the hard TTL expires.
 
-Do not forget to cache negative values, that is: cache error messages or other values associated to failed requests to the target service. Otherwise, a failed target service will not be relieved by the cache if it fails. In addition to caching negative values, implement request coalescing where some logic ensures at most one instance of a request to the target service may be outstanding at any time.
+Do not forget to cache negative values, that is: cache error messages or other values associated to failed requests to the target service. Otherwise, a failed target service will not be relieved by the cache. In addition to caching negative values, ensure at most one instance of a request to the target service may be outstanding at any time.
 
-Do test your cached systems to see what happens if the cache fails or requires rebooting (and repopulating) and also the impact of adding and removing cache nodes, as consistent hashing implementations and their properties may differ between cache products. Also be aware of security issues; caches are targets for attackers trying to populate them with values under their control, and the difference between response time for cached and non-cached requests can give observers information (side channel attack).
+Test your cached systems to see what happens if the cache fails or requires rebooting (and repopulating). Also test the impact of adding and removing cache nodes, as consistent hashing implementations and their properties may differ between cache products. Also be aware of security issues; caches are targets for attackers trying to populate them with values under their control, and the difference between response time for cached and non-cached requests can give information (side channel attack).
 
 ## Building dashboards for operational visibility - John O'Shea
 
-The article contains wisdom on making good dashboards. Forgoing a summary, I suggest reading a dedicated UX design book instead.
+The article contains wisdom on making good dashboards. I forgo a summary and suggest reading a dedicated UX design book instead.
 
 ## Avoiding insurmountable queue backlogs -  David Yanacek
 
-Processing failures can quickly lead to large queue backlogs. If just adding extra processing capacity is not enough to clear the backlog quickly then it might be worth using other techniques. For example, depending on the contract with the clients, you may switch queues to LIFO mode when a backlog builds up and transfer part of the backlog to other queues.
+Processing failures can quickly lead to large queue backlogs. If adding extra processing capacity is not enough to clear the backlog quickly then it might be worth switching queues to LIFO mode, if it is possible given the application semantics.
 
 ## Avoiding fallback in distributed systems -- Jacob Gabrielson
+
+A fallback is an alternative strategy used to do something when the regular way of doing that thing fails. In this definition, retrying against the same endpoint or a different but equivalent endpoint is not a fallback. An example of a true fallback is using a different memory allocator when the call to the default allocator fails.
+Avoid fallbacks. They are hard to test and they are only triggered in chaotic situations which can make things more chaotic. Put more effort into making the default behavior more reliable, instead.
 
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
