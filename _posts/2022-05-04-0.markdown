@@ -72,16 +72,14 @@ This must be an old article: it contains standard CI/CD ideas.
 
 ## Fairness in multi-tenant systems - David Yanacek
 
-Use token-bucket like algorithms to quota clients. It's a good idea to give tenants greater quotas when their service starts up, as the workload may be higher due to downloading updates and installing packages.
+Use token-bucket like algorithms to quota clients. It's a good idea to give services greater quotas when they start up, as the workload may be higher due to downloading updates.
 
 Using quotas raises the question of how to scale quota tracking services. For example, consider a packet stream with a large number of different users sending packets. It should be possible to rate limit each user using a constant memory algorithm, even if the users all have different quotas.
-I diverge from the article here as it mentions algorithms 'Heavy Hitter, Top Talkers and Counting Bloom Filters' and I could only find a canonical description of a Counting Bloom Filter. Additionally, the algorithms are for a problem class known as Top-k. An online algorithm for the Top-k problem finds the k most frequent elements from an online stream. A solution to this problem does _not_ also solve the rate limiting problem if each user has a different quota. I therefore assume the strategy (omitted in the article) is to only _periodically_ compare element counts provided by e.g. a Counting Bloom Filter, with the quota.
+I diverge from the article here as it mentions algorithms 'Heavy Hitter, Top Talkers and Counting Bloom Filters' and I could only find a canonical description of a Counting Bloom Filter. Additionally, the algorithms are for a problem class known as Top-k. An online algorithm for the Top-k problem finds the k most frequent elements from an online stream. A solution to this problem does _not_ also solve the rate limiting problem if each user has a different quota. I assume the strategy (omitted in the article) is to only _periodically_ compare element counts provided by e.g. a Counting Bloom Filter, with the quota.
 
 ## Ensuring rollback safety during deployments - Sandeep Pokkunuri
 
-Deploy changes to fleets of services using Two Phase Deployment: make two waves of changes. The first wave ensures backwards compatibility with the initial state and forwards compatibility with the changes made in the second wave. That way, the second wave of changes can be rolled back and the system will not suffer any residual damage, as the first wave will have ensured forward compatibility.
-
-For example, if you are upgrading communication to use Json instead of XML then first upgrade servers to be able to read Json, and only then upgrade them to also write Json.
+Deploy changes to fleets of services using Two Phase Deployment: make two waves of changes. The first wave ensures both backwards compatibility with the initial state and forwards compatibility with the changes made in the second wave. The second wave of changes can be rolled back, and because the first wave ensured forward compatibility, there will be no lasting damage. For example, if upgrading communication to use Json instead of XML then first upgrade servers to read Json (and XML), and only then upgrade them to also write Json.
 
 Do test the ability to roll changes forward _and_ backwards, in a production-like test environment.
 
