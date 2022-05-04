@@ -89,13 +89,13 @@ I skipped it.
 
 ## Caching challenges and strategies - Matt Brinkley, Jas Chhabra
 
-You can broadly differentiate caching strategies by cache placement. You could place a standalone (on-box) cache in front of each server of a target service, or you could have a separate caching service (external) in front of the target service. With the on-box approach, you have to deal with cache coherence problems. It's easier to offer consistency using the external approach but it implies maintaining another service.
+You can differentiate caching strategies by cache placement. You could place a standalone (on-box) cache in front of each server of a target service, or you could have a separate caching service (external) in front of the target service. With the on-box approach, you have to deal with cache coherence problems. It's easier to offer consistency using the external approach but it implies maintaining another service.
 
-For all caching solutions, consider using soft and hard time-to-live values. Clients will try to refresh cached values when the soft TTL expires, but can rely on reading cached values until the hard TTL expires. This also lets stressed services apply backpressure, by telling clients to ignore the soft TTL until the hard TTL expires.
+For all caching solutions, consider using soft and hard time-to-live values. Clients will try to refresh cached values when the soft TTL expires, but can rely on reading cached values until the hard TTL expires. This lets stressed services apply back pressure, by telling clients to ignore the soft TTL until the hard TTL expires.
 
-Do not forget to cache negative values, that is: cache error messages or other values associated to failed requests to the target service. Otherwise, a failed target service will not be relieved by the cache. In addition to caching negative values, ensure at most one instance of a request to the target service may be outstanding at any time.
+Don't forget to cache negative values: cache error messages or other values for failed requests. Otherwise, a failed target service will not be relieved by the cache. Also ensure at most one instance of a request to the target service may be outstanding at any time.
 
-Test your cached systems to see what happens if the cache fails or requires rebooting (and repopulating). Also test the impact of adding and removing cache nodes, as consistent hashing implementations and their properties may differ between cache products. Also be aware of security issues; caches are targets for attackers trying to populate them with values under their control, and the difference between response time for cached and non-cached requests can give information (side channel attack).
+Test your cached systems to see what happens if the cache fails or requires repopulating. Test the impact of adding and removing cache nodes, as consistent hashing implementations and their properties may differ between cache products. Be aware of security issues; caches are targets for attackers trying to fill them with foreign values, and the difference between response time for cached and non-cached requests can give information (side channel attack).
 
 ## Building dashboards for operational visibility - John O'Shea
 
@@ -103,16 +103,17 @@ The article contains wisdom on making good dashboards. I forgo a summary and sug
 
 ## Avoiding insurmountable queue backlogs -  David Yanacek
 
-Processing failures can quickly lead to large queue backlogs. If adding extra processing capacity is not enough to clear the backlog quickly then it might be worth switching queues to LIFO mode, if it is possible given the application semantics.
+Processing failures can lead to queue backlogs. If adding extra processing capacity is not enough to clear the backlog then it might be worth switching queues to LIFO mode, if it is possible for the application.
 
 ## Avoiding fallback in distributed systems -- Jacob Gabrielson
 
-A fallback is an alternative strategy used to do something when the regular way of doing that thing fails. In this definition, retrying against the same endpoint or a different but equivalent endpoint is not a fallback. An example of a true fallback is using a different memory allocator when the call to the default allocator fails.
-Avoid fallbacks. They are hard to test and they are only triggered in chaotic situations which can make things more chaotic. Put more effort into making the default behavior more reliable, instead.
+A fallback is an alternative strategy used to do something when the regular way of doing that thing fails. In this definition, retrying against the same endpoint or a different but equivalent endpoint is not a fallback. An example of a fallback is using a different memory allocator when the call to the default allocator fails.
+
+Avoid fallbacks. They are hard to test and they are only triggered in chaotic situations which can make things more chaotic. Put more effort into making the default behavior more reliable.
 
 ## Avoiding overload in distributed systems by putting the smaller service in control - Joe Magerramov
 
-Running services are often split into a data and control plane. The data plane runs the application and the control plane takes care of configuration. It is important to make the system reliable in the case that many data plane servers are served by few control plane servers. There are three broad strategies:
+Running services are often split into data and control planes. The data plane runs the application and the control plane takes care of configuration. There are three broad syncing strategies:
 
 1. The data plane pulls from the control plane
 2. The control plane pushes to the data plane
@@ -124,7 +125,7 @@ There is a (4)th, in-between, solution, where data plane servers reach out to co
 
 ## Automating safe, hands-off deployments - Clare Liguori
 
-At Amazon source code is not the only data that goes through CI/CD pipelines. Source code, tests, tools, assets, configuration, infrastructure and operating systems or patches all have pipelines. A pipeline is made of a number of stages and includes building, testing and deployment. The deployment stage is made of waves. Each waves has a successively shorter duration and includes deploying to a successively larger number of deployment machines or regions. Attention is paid to automatically monitor alarms to either block progressing to a next stage, or to rollback complete.
+At Amazon, source code is not the only data that goes through CI/CD pipelines. Source code, tests, tools, assets, configuration, infrastructure and operating systems or patches all have pipelines. A pipeline is made of a number of stages and includes building, testing and deployment. The deployment stage is made of waves. Each waves has a successively shorter duration and includes deploying to a successively larger number of deployment machines or regions. Attention is paid to automatically monitor alarms to either block progressing to a next stage, or to rollback complete.
 
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
