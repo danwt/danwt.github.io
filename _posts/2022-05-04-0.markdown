@@ -34,19 +34,19 @@ Use capped exponential backoff to avoid overloading a system with retries. Combi
 
 ## Static stability using Availability Zones - Becky Weiss, Mike Furr
 
-Define static stability as being stable in the face of failure, without needing to reactively provision more resources. In practice this means having additional resources on standby such that when a failure occurs, the service can use the reserve resources while the failed resources are replaced.
+Aim for static stability, meaning being stable in the face of failure without needing to add resources after the fact. In practice it means having resources on standby. When a failure occurs the service can use the backup resources until the failed resources are replaced.
 
 ## Reliability, constant work, and a good cup of coffee - Colm MacCárthaigh
 
-Improve stability by always doing the same (maximum) amount of work instead of varying and scaling up the amount of work. If there isn't much work to be done then create dummy work. The reduced workload variance is more predictable and there will be fewer ways for your system to fail in a cascade. A good example is to have a downstream service read configurations from an upstream service in a loop instead of having the upstream service push a new configuration on changes. The solution requires less logic and savings in dev and maintenance cost cans outweigh the cost of additional work.
+Improve stability by always doing the same amount of work instead of varying and scaling up the amount of work. If there isn't work then create dummy work. The reduced variance is more predictable and there will be fewer ways for your system to fail. A good example is having a downstream service read configuration from an upstream service in a loop, instead of pushing from the upstream service on changes. It requires less logic and savings in dev and maintenance cost might make up for added computation.
 
 ## Minimizing correlated failures in distributed systems - Joe Mageramov
 
-Use random jitter across many time based operations to reduce the chance of correlated failures. It's a good idea to use a value such as the server IP address as a seed to help with debugging.
+Use random jitter in time based operations to reduce the chance of correlated failures. It's a good idea to use a value like the server IP address as a seed to help with debugging.
 
 ## Making retries safe with idempotent APIs - Malcolm Featonby
 
-For particular services it is worth publishing an idempotency contract. The API contains a `clientToken` parameter, which identifies client requests. The service caches requests and their results and returns cached results in the case that a duplicate `clientToken` is received. Furthermore, the parameters of the requests are stored too, and if the `clientToken` matches but the parameters are different, then the service returns an error. In this way it is assumed that the client made an error if sending two differently parameterized requests with the same token. Amazon found it reasonable to expire cached results after a certain time.
+For particular services it is worth publishing an idempotency contract. The API contains a `clientToken` parameter, which identifies client requests. The service caches requests and results and returns cached results when a duplicate `clientToken` is received. The parameters of requests are also stored, and if the `clientToken` matches but the parameters are different, then the service returns an error. In this way you assume that the client made an error if sending two differently parameterized requests with the same token. Amazon found it reasonable to expire cached results after a certain time.
 
 ## Leader election in distributed systems - Marc Brooker
 
@@ -54,29 +54,28 @@ Use a distributed lock service to elect a leader. The devil is in the details of
 
 ## Instrumenting distributed systems for operational visibility - David Yanacek
 
-Log systems verbosely to help you and your clients debug and anticipate problems. In particular
+Use logs to help you and your clients debug and anticipate problems. In particular
 
-- Prefer to pass around trace id's to help connect log statements between services.
-- Pass around metric aggregation objects to be able to log a comprehensible set of metrics at the end of a processing pipeline.
-- Test logging at max throughput and consider logging to different disk partitions, logging to a ramdisk or temporary file system, or writing compressed logs. If writing compressed logs be sure to use a compression algorithm that can handle truncation.
-- Rotate logs more frequently in order to spread out the work done to transfer or compress the data and avoid spikes in resource utilization, even if this results in slightly more work overall.
-- Use opt-in for logging sensitive data, this prevents the scenario where you accidentally add sensitive data to a log, if using opt-out.
+- Pass around trace id's to help connect log statements between services.
+- Pass around metric aggregation objects to log a comprehensible set of metrics at the end of a processing pipeline.
+- Test logging at max throughput and consider logging to different disk partitions, logging to a ramdisk or temporary file system, or writing compressed logs. Be sure to use a compression algorithm that can handle truncation.
+- Rotate logs frequently to spread out the work done to transfer or compress the data, and avoid spikes in resource utilization. Do this even if it means slightly more work overall.
+- Use opt-in for logging sensitive data.
 
 ## Implementing health checks - David Yanacek
 
-Ensure servers provide their software version in health checks so that zombie servers, servers that have been disconnected for a long time and then reconnect, are detected. Additionally, beware the black hole phenomenon, where a failed server responds to requests faster than other servers, and thus takes a larger portion of work from the load balancer.
+Ensure servers provide their software version in health checks, so that zombie servers (disconnected servers that reconnect after a long time) are noticed. Also, beware the black hole phenomenon: failed servers respond to requests faster and take a greater portion of work from the load balancer.
 
 ## Going faster with continuous delivery - Mark Mansour
 
-This must be an old article: it gives common CI/CD ideas.
+This must be an old article: it contains standard CI/CD ideas.
 
 ## Fairness in multi-tenant systems - David Yanacek
 
-Use token-bucket like algorithms to quota clients. It can be a good idea to give tenants greater quotas when their provisioned service initially starts up, as the workload may be higher due to downloading updates and installing packages, ect.
+Use token-bucket like algorithms to quota clients. It's a good idea to give tenants greater quotas when their service starts up, as the workload may be higher due to downloading updates and installing packages.
 
-Using quotas raises the question of how to scale quota tracking services: use consistent hashing to associate quota lookup keys for different clients to different lookup servers. Additionally, use algorithms like Heavy Hitter, Top Talkers and Counting Bloom Filters to set an upper bound on the memory used.
-
-Using quotas raises the question of how to scale quota tracking services. For example, consider a packet stream with a large number of different users sending packets. It should be possible to rate limit each user using a constant memory algorithm, even if the users all have different quotas. I will diverge from the article here as it mentions algorithms 'Heavy Hitter, Top Talkers and Counting Bloom Filters' and I could only find a canonical description of a Counting Bloom Filter. Additionally, the algorithms are for a problem class known as Top-k. An online algorithm for the Top-k problem finds the k most frequent elements from an online stream. A solution to this problem does _not_ also solve the rate limiting problem if each user has a different quota. I therefore assume the strategy (omitted in the article) is to only _periodically_ compare element counts provided by e.g. a Counting Bloom Filter with the quota.
+Using quotas raises the question of how to scale quota tracking services. For example, consider a packet stream with a large number of different users sending packets. It should be possible to rate limit each user using a constant memory algorithm, even if the users all have different quotas.
+I diverge from the article here as it mentions algorithms 'Heavy Hitter, Top Talkers and Counting Bloom Filters' and I could only find a canonical description of a Counting Bloom Filter. Additionally, the algorithms are for a problem class known as Top-k. An online algorithm for the Top-k problem finds the k most frequent elements from an online stream. A solution to this problem does _not_ also solve the rate limiting problem if each user has a different quota. I therefore assume the strategy (omitted in the article) is to only _periodically_ compare element counts provided by e.g. a Counting Bloom Filter, with the quota.
 
 ## Ensuring rollback safety during deployments - Sandeep Pokkunuri
 
