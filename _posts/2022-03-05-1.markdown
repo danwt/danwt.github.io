@@ -3,7 +3,7 @@ layout: post
 title:  "Amazon Builder's Library. TLDR;"
 date:   2022-03-05 19:12:00 +0000
 categories: sweng
-published: false
+published: true
 ---
 
 AWS publishes a collection of PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in around two paragraphs. I downloaded the PDFs on March 5th 2022, so any articles posted after that date aren't included.
@@ -74,9 +74,15 @@ This must be an old article: it gives common CI/CD ideas.
 
 Use token-bucket like algorithms to quota clients. It can be a good idea to give tenants greater quotas when their provisioned service initially starts up, as the workload may be higher due to downloading updates and installing packages, ect. Using quotas raises the question of how to scale quota tracking services: use consistent hashing to associate quota lookup keys for different clients to different lookup servers. Additionally, use algorithms like Heavy Hitter, Top Talkers and Counting Bloom Filters to set an upper bound on the memory used.
 
+The artic
+
 Here are the algorithms:
 
-TODO:
+### Heavy Hitter
+
+### Top Talkers
+
+### Counting Bloom Filters
 
 ## Ensuring rollback safety during deployments - Sandeep Pokkunuri
 
@@ -132,5 +138,9 @@ At Amazon source code is not the only data that goes through CI/CD pipelines. So
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
 #### [Shuffle Sharding Implementation](https://github.com/awslabs/route53-infima)
+
+#### [Heavy Hitter's algorithm article](https://datagenetics.com/blog/november22019/index.html)
+
+#### [Top-k count-min sketch article](https://serhatgiydiren.github.io/system-design-interview-top-k-problem-heavy-hitters)
 
 TODO: Add papers from 'Fairness in multi-tenant systems'
