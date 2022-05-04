@@ -113,6 +113,20 @@ Processing failures can quickly lead to large queue backlogs. If adding extra pr
 A fallback is an alternative strategy used to do something when the regular way of doing that thing fails. In this definition, retrying against the same endpoint or a different but equivalent endpoint is not a fallback. An example of a true fallback is using a different memory allocator when the call to the default allocator fails.
 Avoid fallbacks. They are hard to test and they are only triggered in chaotic situations which can make things more chaotic. Put more effort into making the default behavior more reliable, instead.
 
+## Avoiding overload in distributed systems by putting the smaller service in control - Joe Magerramov
+
+Running services are often split into a data and control plane. The data plane runs the application and the control plane takes care of configuration. It is important to make the system reliable in the case that many data plane servers are served by few control plane servers. There are three broad strategies:
+
+1. The data plane pulls from the control plane
+2. The control plane pushes to the data plane
+3. Both planes communicate via shared scalable object store
+
+Each strategy has pros and cons. In (1) the data plane can overload the control plane. (2) avoids that problem but takes more work to implement; control plane servers need to know of active data plane servers via some kind of heartbeat service, and they also need to agree on subsets of data plane servers to serve (via consistent hashing). (3) may be reliable but might it might be hard to keep latencies down, and to deal with staleness.
+
+There is a (4)th, in-between, solution, where data plane servers reach out to control plane servers via a lightweight message (UDP) and control servers respond to these messages in their own time by opening direct channels to the respective data plane server.
+
+## Automating safe, hands-off deployments - Clare Liguori
+
 #### [Amazon Builders' Library](https://aws.amazon.com/builders-library)
 
 #### [Shuffle Sharding Implementation](https://github.com/awslabs/route53-infima)
