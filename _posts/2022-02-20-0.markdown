@@ -2,7 +2,7 @@
 layout: post
 title:  "Chain Replication"
 date:   2022-02-20 15:39:00 +0000
-categories: concurrent_algorithms
+categories: message_passing
 ---
 
 I'm reading through this book on state replication, this is the second post of the series. The first is [here]({% post_url 2022-02-19-0 %}). I created a TLA+ model of a simple algorithm used to replicate an object in an asynchronous message passing model with crash stop failures. The communication is FIFO and reliable (up to crashes). The requirement on the algorithm is a perfect failure detector.

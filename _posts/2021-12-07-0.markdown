@@ -2,7 +2,7 @@
 layout: post
 title:  "TLA+ video - the Agoric smart contract kernel"
 date:   2021-12-07 18:043:00 +0000
-categories: tla
+categories: sweng
 ---
 
 In October 2021, Andrey Kupriyanov and I presented this talk on modelling aspects of the [Agoric](https://github.com/Agoric/) smart contracts platform in TLA+.

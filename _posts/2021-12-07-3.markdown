@@ -2,7 +2,7 @@
 layout: post
 title:  "Lower bound (space) on FIFO mutual exclusion in shared memory"
 date:   2021-12-07 20:25:00 +0000
-categories: concurrent_algorithms
+categories: shared_memory
 ---
 
 Consider an asynchronous shared memory model with no process failures. FIFO mutual exclusion provides a critical section as usual. Additionally:

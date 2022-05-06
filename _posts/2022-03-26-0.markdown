@@ -2,7 +2,7 @@
 layout: post
 title:  "Logical Physical Clocks and Consistent Snapshots in Globally Distributed Databases"
 date:   2022-03-26 19:53:00 +0000
-categories: concurrent_algorithms
+categories: TODO
 published: false
 ---
 

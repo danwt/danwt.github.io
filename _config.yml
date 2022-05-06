@@ -57,4 +57,5 @@ remote_theme: samarsault/plainwhite-jekyll
 
 plugins:
   - jekyll-seo-tag
+  - jemoji
 #  - jekyll-feed

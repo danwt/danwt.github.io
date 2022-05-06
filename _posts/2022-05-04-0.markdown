@@ -6,7 +6,30 @@ categories: sweng
 published: true
 ---
 
-AWS publishes PDFs containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in around two paragraphs. I downloaded the PDFs on March 5th 2022, so articles posted after that date aren't included.
+AWS [publishes PDFs](https://aws.amazon.com/builders-library) containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in around two paragraphs. I downloaded the PDFs on March 5th 2022, so articles posted after that date aren't included.
+
+## Contents
+
+- [Using load shedding to avoid overload](#using-load-shedding-to-avoid-overload---david-yanacek) (:star2::star2::star2:)
+- [Workload isolation using shuffle-sharding](#workload-isolation-using-shuffle-sharding---colm-maccárthaigh) (:star2::star2::star2:)
+- [Timeouts, retries, and backoff with jitter](#timeouts-retries-and-backoff-with-jitter---marc-brooker) (:star2::star2:)
+- [Static stability using Availability Zones](#static-stability-using-availability-zones---becky-weiss-mike-furr) (:star2:)
+- [Reliability, constant work, and a good cup of coffee](#reliability-constant-work-and-a-good-cup-of-coffee---colm-maccárthaigh) (:star2::star2::star2:)
+- [Minimizing correlated failures in distributed systems](#minimizing-correlated-failures-in-distributed-systems---joe-mageramov) (:star2::star2:)
+- [Making retries safe with idempotent APIs](#making-retries-safe-with-idempotent-apis---malcolm-featonby) (:star2::star2:)
+- [Leader election in distributed systems](#leader-election-in-distributed-systems---marc-brooker) (:star2:)
+- [Instrumenting distributed systems for operational visibility](#instrumenting-distributed-systems-for-operational-visibility---david-yanacek) (:star2::star2::star2:)
+- [Implementing health checks](#implementing-health-checks---david-yanacek) (:star2::star2::star2:)
+- [Going faster with continuous delivery](#going-faster-with-continuous-delivery---mark-mansour) (:star2:)
+- [Fairness in multi-tenant systems](#fairness-in-multi-tenant-systems---david-yanacek) (:star2:)
+- [Ensuring rollback safety during deployments](#ensuring-rollback-safety-during-deployments---sandeep-pokkunuri) (:star2::star2::star2:)
+- [Challenges with distributed systems](#challenges-with-distributed-systems---jacob-gabrielson) (:star2:)
+- [Caching challenges and strategies](#caching-challenges-and-strategies---matt-brinkley-jas-chhabra) (:star2::star2::star2:)
+- [Building dashboards for operational visibility](#building-dashboards-for-operational-visibility---john-oshea) (:star2:)
+- [Avoiding insurmountable queue backlogs](#avoiding-insurmountable-queue-backlogs---david-yanacek) (:star2:)
+- [Avoiding fallback in distributed systems](#avoiding-fallback-in-distributed-systems----jacob-gabrielson) (:star2:)
+- [Avoiding overload in distributed systems by putting the smaller service in control](#avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control---joe-magerramov) (:star2::star2:)
+- [Automating safe, hands-off deployments](#automating-safe-hands-off-deployments---clare-liguori) (:star2:)
 
 ## Using load shedding to avoid overload - David Yanacek
 

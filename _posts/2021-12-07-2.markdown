@@ -2,7 +2,7 @@
 layout: post
 title:  "Lower bound (time) on worst case read-write register in message passing"
 date:   2021-12-07 18:045:00 +0000
-categories: concurrent_algorithms
+categories: message_passing
 ---
 
 Consider a read/write register in a message passing model with discrete time. If R is the worst case time to perform READ and W is the worst case time to perform WRITE, and messages can take up to _d_ units of time to be delivered, then:

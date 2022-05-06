@@ -2,7 +2,7 @@
 layout: post
 title:  "Large-scale Incremental Processing Using Distributed Transactions and Notifications a.k.a. Percolator"
 date:   2022-03-05 19:12:00 +0000
-categories: concurrent_algorithms
+categories: message_passing
 ---
 
 I've had this paper on my to-read list for a while: apparently it made a splash in the transaction processing world. Google presents Percolator, a system that provides random concurrent access to a multi petabyte repository while maintaining invariants. Beware, the paper is from 2010, so it might not be state of the art anymore.
