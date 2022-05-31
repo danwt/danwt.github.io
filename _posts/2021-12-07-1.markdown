@@ -8,3 +8,5 @@ categories: sweng
 In December 2021 I gave a TLA+ tutorial on the basics of using the language and making the most of the Apalache and TLC model checkers.
 
 <iframe width="1024" height="768" src="https://youtu.be/peKYddIvCIs" frameborder="0" allowfullscreen></iframe>
+
+#### [(youtube)](https://youtu.be/peKYddIvCIs)

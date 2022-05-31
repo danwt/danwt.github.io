@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Money creation in the modern economy"
+date:   2022-03-30 21:13:00 +0000
+categories: economics
+published: false
+---
+
+The Bank of England publishes articles on their website. [Money creation in the modern economy](https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy) is an understandable 14 page explainer of how money creation works in practice today.
+
+#### [Bank of England: Money creation in the modern economy](https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy)
+
+#### [(Wayback machine)](https://web.archive.org/web/20220531180345/https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy)

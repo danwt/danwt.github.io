@@ -1,10 +1,12 @@
 ---
 layout: post
-title:  "TLA+ video - the Agoric smart contract kernel"
+title:  "Modelling the Agoric smart contract kernel using TL+"
 date:   2021-12-07 18:043:00 +0000
 categories: sweng
 ---
 
-In October 2021, Andrey Kupriyanov and I presented this talk on modelling aspects of the [Agoric](https://github.com/Agoric/) smart contracts platform in TLA+.
+[Agoric](https://github.com/Agoric/) is a smart contract platform built for Javascript. In October 2021, Andrey Kupriyanov and I presented a talk on modelling parts of the platform in TLA+. The platform has protocol layers including a remote promise resolution layer and a distributed garbage collector.
 
 <iframe width="1024" height="768" src="https://youtu.be/JyMX7Hz9uEs" frameborder="0" allowfullscreen></iframe>
+
+#### [(youtube)](https://youtu.be/JyMX7Hz9uEs)
