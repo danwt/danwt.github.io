@@ -3,10 +3,10 @@ layout: post
 title:  "A software engineering medley"
 date:   2022-06-01T00:00:00+00:00
 tags: [sweng]
-published: true
+published: false
 ---
 
-I highlight interesting software engineering papers and articles that I found in various places. They are lighter reading than technical papers but are nevertheless interesting. I did not choose them based on any criteria, but just my interest.
+I highlight interesting software engineering papers that I found in various places. They are lighter reading than technical papers but are nevertheless interesting. I did not choose them based on any criteria, but just my interest. I also included some papers from other fields if it seemed appropriate.
 
 ## Large Scale Analysis of Multitasking Behavior During Remote Meetings
 
@@ -24,9 +24,36 @@ There will never be a perfect software development process. Many factors contrib
 
 User interfaces can actually hamper user experience and user performance on cognitive tasks. The authors class interfaces as either internal or external. External interfaces show domain constraints visually, while internal interfaces do not. For example, it is common to grey out buttons for impossible actions. Such an interface would be classified as external. The authors found that a group of users performed better on a Tower of Hanoi game with an internal interface as opposed to an external one, and those users retained more information about the task after an 8 month wait. Additionally, users given a graphical timetabling puzzle did not perform worse with an internal interface than an external one. The users with the external interface actually performed fewer superfluous actions, indicating that they thought more about each action.
 
+## Here we go again: why is it difficult for developers to learn another programming language?
+
+Experienced programmers learn new languages by reading and consuming material alone. They learn what they need and don't worry about advanced language features. Learners try to relate new knowledge to existing knowledge but this can lead to interference; false assumptions are made about the new language.
+
+Language designers and teachers should try to link concepts to existing languages. It is a good idea to explicitly mention the reasons for design choices in the language.
+
+## “A Pace Not Dictated by Electrons”: An Empirical Study of Work Without Email
+
+When studied participants did not use email at work they spent more time on a given window without switching windows. They reported feeling more focused, and enjoying their work more. The participants were less stressed, as measured by heart rate variability.
+
+## Bugs as Deviant Behavior: A General Approach to Inferring Errors in Systems Code
+
+It is common for software requirements to not be specified. This can make it difficult to determine what the code is supposed to do, and therefore difficult to determine what is a bug or not. The authors detect bugs by inferring correct behaviors based on patterns. For example, in the case that 1000 calls to a lock function are followed by an unlock function, but 1 call is not, you might infer that the case without the call to unlock is a bug. Another example is a contradiction implying the presence of a bug. The code
+
+```cpp
+if (foo != null){
+    foo->bar()
+}
+```
+
+demonstrates a contradictory belief.
+
+The authors present a tool which detects these instances via template pattern matching. They found around 200 bugs in the Linux kernel and OpenBSD, mostly related to null pointers.
+
 ## Links
 
 - [Vivek Haldar's youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
 - [Large Scale Analysis of Multitasking Behavior During Remote Meetings](https://arxiv.org/pdf/2101.11865.pdf)
 - [How Work From Home Affects Collaboration](TODO:)
 - [A Rational Design Process - How and Why to Fake It](TODO:)
+- [Here we go again: why is it difficult for developers to learn another programming language?](TODO:)
+- [“A Pace Not Dictated by Electrons”: An Empirical Study of Work Without Email](TODO:)
+- [Bugs as Deviant Behavior: A General Approach to Inferring Errors in Systems Code](TODO:)
