@@ -6,15 +6,21 @@ tags: [shared_memory]
 published: true
 ---
 
-Consider an asynchronous shared memory model with no process failures. FIFO mutual exclusion provides a critical section as usual. Additionally:
+## Algorithm
 
-1. there is a doorway section when acquiring the resource. Processes enter the CS in order of completing the doorway section.
-2. there is deadlock freedom.
-3. there is obstruction freedom in all regions except resource acquisition.
+Mutual exclusion algorithms have four stages and satisfy some conditions. The four stages are the _entry_, _critical section_, _exit_ and _remainder_. The entry acquires the resource, the critical section uses it and the exit releases it. When a process does not care about the resource it is in the remainder. The algorithm must satisfy
 
-It turns out that the implementation space must be able to store _n_ different values where _n_ is the number of processes (so log(_n_) bits).
+- at most one process is in the critical section at a time
+- starting from any state where some process is in the entry, some process always enters the critical section eventually
+- a process can always perform the exit in a finite number of its own steps only
 
-For contradiction suppose it's possible with less than log(_n_) bits. Suppose an adversarial scheduler who schedules processes in round robin order. If Ci denotes a system configuration where Pi has taken steps until it completes its doorway, then there must exist Ci=Cj with i#j by the pigeonhole principle.
+Additionally, FIFO algorithms have a doorway at the start of the entry. Processes are guaranteed to enter the critical section in the same order that they complete the doorway. A doorway can always be completed by a process in a finite number of its own steps only.
+
+## Result and proof
+
+In an asynchronous shared memory model with no process failures, implementing FIFO mutual exclusion for _n_ processes requires log(n) bits of space. That is, at least n values must be able to be stored, one for each process.
+
+Proof: for contradiction suppose it's possible with fewer than log(_n_) bits. Suppose an adversarial scheduler who schedules processes in round robin order. If Ci denotes a state where Pi has taken steps until it in the entry and has completed its doorway, then by the pigeonhole principle there must exist Cj, with Cj=Ci and i#j. That is, there
 
 Consider an execution _e_ starting from Ci where Pk enters the CS twice. Since Ci=Cj it is possible to execute _e_ from Cj. In this case Pk enters the CS a second time even though Cj has completed its doorway (by adversarial choice). This contradicts FIFO.
 

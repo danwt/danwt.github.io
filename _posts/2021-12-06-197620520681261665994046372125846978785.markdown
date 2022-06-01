@@ -6,6 +6,8 @@ tags: [message_passing]
 published: true
 ---
 
+## Algorithm and proof
+
 Consider implementing a read/write register in a message passing model with discrete time. The property is that each READ must return the last value written before it began, if no WRITE overlaps any operation.
 
 Assume messages can take up to _d_ units of time to be delivered. Let R be the worst case time to perform READ and W be the worst case time to perform WRITE. Then
