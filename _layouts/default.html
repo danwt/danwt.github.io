@@ -28,6 +28,14 @@
 			<a href="https://linkedin.com/in/{{site.author.linkedin}}" target="_blank"><img
 					src="assets/images/icon/linkedin.svg" class="social-icon"></a>
 			{% endif %}
+			{% if site.author.codeforces %}
+			<a href="https://codeforces.com/profile/{{site.author.codeforces}}" target="_blank"><img
+					src="assets/images/icon/codeforces.svg" class="social-icon"></a>
+			{% endif %}
+			{% if site.author.atcoder %}
+			<a href="https://atcoder.jp/users/{{site.author.atcoder}}" target="_blank"><img
+					src="assets/images/icon/atcoder.svg" class="social-icon"></a>
+			{% endif %}
 			<!-- <a href="about"><img src="assets/images/icon/me.svg" class="social-icon"></a> -->
 			<br>
 			{{ site.author.bio }}
