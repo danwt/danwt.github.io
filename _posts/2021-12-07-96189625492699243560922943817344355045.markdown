@@ -28,7 +28,7 @@ Starting from C(i), let σ be the sequence of events where processes 0..(i-1) ar
 
 ![]({{ site.url }}/assets/2021-12-07/diagram1.png){: width="100%" .centered }
 
-It is possible to schedule σ starting from C(j) instead of C(i), because they are indistinguishable, and in this execution P(k) will enter the critical section a second time, even though P(i) had previously entered the doorway and did not reach the critical section. This contradicts the FIFO property.
+It is possible to schedule σ starting from C(j) instead of C(i), because they are indistinguishable, and in this execution P(k) will enter the critical section a second time, even though P(i) had previously entered the doorway and did not reach the critical section. This contradicts the FIFO property □
 
 ## Links
 

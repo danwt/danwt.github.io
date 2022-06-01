@@ -6,15 +6,19 @@ tags: [shared_memory]
 published: true
 ---
 
-Consider an asynchronous shared memory model with no process failures. Approximate agreement between _n_ processes is the problem of agreeing _n_ output values within _eps_ of each other, and falling in the interval [min(input values), max(input values)].
+## Algorithm
 
-Consider a solution implementing approximate agreement for _n_ input values (one per process) in {0, 1} and _eps_ < 1. If the solution also provides solo termination (each process will terminate if run sufficiently long) then the time complexity is at least _n_.
+Consider an asynchronous shared memory model with single write registers and no process failures. Approximate agreement between n processes is the problem of agreeing n output values within ε of each other, and all falling in the interval [min(input values), max(input values)], where the input values are assigned 1-1 to processes.
 
-For contradiction suppose it is possible in less than _n_ steps.
+## Result and proof
 
-Take two solo executions of Pi and Pj starting at a configuration C where all registers are empty and the input values of Pi and Pj are 0 and 1. Since they are solo executions, by validity, the outputs must be 0 and 1.
+Any solution with input values in {0, 1} and ε < 1 that provides obstruction freedom (each process will finish if it is scheduled for sufficiently many consecutive steps) has time complexity at least n.
 
-In a solo execution by some Pk, it does not have time to read the register of all the other processes and write to its own register. If Pi does not read all other processes registers then Pi cannot distinguish the execution of Pj starting from C. If it does read other registers but does not write to its own register, then Pj cannot distinguish the execution of Pi starting from C. In either case there is a concatenation of solo executions resulting in faulty pairwise execution.
+Proof: suppose for contradiction suppose it's possible in less than n steps. Take two solo executions σi and σj of Pi and Pj, starting at states Ci and Cj. In Ci all input values are 0, and in Cj all input values are 1. Pi and Pj will output 0 and 1. Both Pi and Pj cannot distinguish Ci and Cj from a starting point C, where Pi is given input 0 and Pj is given 1.
+
+![]({{ site.url }}/assets/2021-12-03/diagram.png){: width="90%" .centered }
+
+Moreover, in any execution a process does not have time to read the register of all other processes and write to its own register. This at least one of Pi and Pj will not have time to distinguish Ci (Cj) from C. To see this, without loss of generality, if Pi does not read from Pj during σi then the execution σjσi, starting from C, will not be valid. If Pi does read from Pj, but does not write to its own register, then Pj cannot distinguish C and the state after running σi from C. Therefore, starting from C, σiσj will not be valid □
 
 ## Links
 
