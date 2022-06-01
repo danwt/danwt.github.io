@@ -22,7 +22,7 @@ The algorithm has a two phase commit structure. Writers non atomically lock all 
 
 The algorithm is made more interesting by the multi-versioning. Each item has a multiple versions. When an item is locked, the associated data is written to a new version but concurrent readers will continue to read the old version until the write transaction commits and a pointer to the new version is made visible.
 
-![]({{ site.url }}/assets/2022-05-03-0/percolator.png){: width="55%" .centered }
+![]({{ site.url }}/assets/2022-03-05/percolator.png){: width="55%" .centered }
 
 The diagram shows a state with three items. Some transactions have committed, writing pointers in the write column pointing into the data column. However, there is an uncompleted (but committed) transaction. This is evident from the lock pointer at (item 2, time 42) which points to an (absent) lock at (item 0, time 42). A pointer to an absent lock indicates that the transaction either committed or was rolled back. If there is data at associated to the absent lock then the transaction committed, otherwise it rolled back. In this case, there is associated data ((item 0, time 42)) so the transaction committed.
 

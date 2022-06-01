@@ -45,7 +45,7 @@ Pagination helps to avoid wasted work and makes it easier to estimate the time t
 
 Shuffle sharding is a technique to improve reliability of a client fleet who share common resources or dependencies. For example, if you have clients who need work done, and workers, you want to match clients to workers in a many-to-many fashion so that the failure of an individual worker effects as few clients as possible. If you have *n* clients and *m* workers and each client requires *k* workers with *k* < *m* then you should try to make sure that the size of the overlap between the sets of *k* workers assigned to any two clients is minimized.
 
-![]({{ site.url }}/assets/2022-05-03-1/shuffle_sharding.png){: width="70%" .centered }
+![]({{ site.url }}/assets/2022-05-04/shuffle_sharding.png){: width="70%" .centered }
 
 The image shows a configuration where two workers are assigned to each client. Even if both workers of a single client fail, the other clients will still have a functioning worker.
 
