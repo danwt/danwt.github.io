@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "A software engineering medley"
+date:   2022-06-01T00:00:00+00:00
+tags: [sweng]
+published: true
+---
+
+I highlight interesting software engineering papers and articles that I found in various places. They are lighter reading than technical papers but are nevertheless interesting. I did not choose them based on any criteria, but just my interest.
+
+## Large Scale Analysis of Multitasking Behavior During Remote Meetings
+
+Longer meetings and meetings with more people have more multitasking. Morning meetings have more multitasking than afternoon meetings. Indeed, prior work shows that people are more focused in the afternoon. Scheduled meetings have more multitasking than ad hoc meetings. More multitasking occurs Monday-Thursday than on Friday.
+
+## How Work From Home Affects Collaboration (in the pandemic)
+
+Working from home reduces the number of meeting hours and increases the amount of time spent messaging. The number of focused hours is overall greater than when working in an office.
+
+## A Rational Design Process - How and Why to Fake It
+
+There will never be a perfect software development process. Many factors contribute to this. For example, the people who want the software to be built often do not fully understand what they want. Developers may have ulterior motives, for example, being fascinated by a particular technology. The authors argue that despite the impossibility of a perfect process, we should still strive for it. Actionably, we should write good documentation. TODO: read
+
+## The Paradox of the Assisted User: Guidance can be Counterproductive
+
+User interfaces can actually hamper user experience and user performance on cognitive tasks. The authors class interfaces as either internal or external. External interfaces show domain constraints visually, while internal interfaces do not. For example, it is common to grey out buttons for impossible actions. Such an interface would be classified as external. The authors found that a group of users performed better on a Tower of Hanoi game with an internal interface as opposed to an external one, and those users retained more information about the task after an 8 month wait. Additionally, users given a graphical timetabling puzzle did not perform worse with an internal interface than an external one. The users with the external interface actually performed fewer superfluous actions, indicating that they thought more about each action.
+
+## Links
+
+- [Vivek Haldar's youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
+- [Large Scale Analysis of Multitasking Behavior During Remote Meetings](https://arxiv.org/pdf/2101.11865.pdf)
+- [How Work From Home Affects Collaboration](TODO:)
+- [A Rational Design Process - How and Why to Fake It](TODO:)

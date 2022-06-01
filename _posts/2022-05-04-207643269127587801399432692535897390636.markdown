@@ -151,7 +151,7 @@ There is a (4)th, in between, solution, where data plane servers reach out to co
 
 ## *Automating safe, hands-off deployments*
 
-At Amazon, source code is not the only data that goes through CI/CD pipelines. Source code, tests, tools, assets, configuration, infrastructure and operating systems or patches all have pipelines. A pipeline is made of a number of stages and includes building, testing and deployment. The deployment stage is made of waves. Each waves has a successively shorter duration and includes deploying to a successively larger number of deployment machines or regions. Attention is paid to automatically monitor alarms to either block progressing to a next stage, or to rollback complete.
+At Amazon, source code is not the only data that goes through CI/CD pipelines. Source code, tests, tools, assets, configuration, infrastructure and operating systems or patches all have pipelines. A pipeline is made of a number of stages and includes building, testing and deployment. The deployment stage is made of waves. Each wave has a successively shorter duration and includes deploying to a successively larger number of deployment machines or regions. Attention is paid to automatically monitor alarms to either block progressing to a next stage, or to rollback completely.
 
 ## Links
 
