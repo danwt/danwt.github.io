@@ -6,11 +6,19 @@ tags: [message_passing]
 published: true
 ---
 
-Consider a read/write register in a message passing model with discrete time. If R is the worst case time to perform READ and W is the worst case time to perform WRITE, and messages can take up to _d_ units of time to be delivered, then:
+Consider implementing a read/write register in a message passing model with discrete time. The property is that each READ must return the last value written before it began, if no WRITE overlaps any operation.
 
-d <= R + W.
+Assume messages can take up to _d_ units of time to be delivered. Let R be the worst case time to perform READ and W be the worst case time to perform WRITE. Then
 
-For contradiction, suppose the opposite. If P0 WRITEs at t=0 and P1 READs at t=W then by R+W P1's READ has returned. P1 cannot in the worst case distinguish executions where P0 did WRITE(1) or WRITE(2) if R+W < d, as the message will not have reached him: contradiction.
+d <= W + R.
+
+![]({{ site.url }}/assets/2021-12-06/diagram.png){: width="90%" .centered }
+
+That is, it is not possible to read a write in less than the time it takes to send a message.
+
+Proof: for contradiction, suppose the opposite. If P0 WRITEs at t=0 and P1 READs at t=W then by R+W P1's READ has returned. P1 cannot in the worst case distinguish executions where P0 did WRITE(1) or WRITE(2) if W+R < d, as the message will not have reached him: contradiction □
+
+Fairly obvious, I guess.
 
 ## Links
 
