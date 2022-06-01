@@ -52,6 +52,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-relative-links
   - jemoji
+  - jekyll-seo-tag
 paginate: 24
 paginate_path: "/page/:num"
 
