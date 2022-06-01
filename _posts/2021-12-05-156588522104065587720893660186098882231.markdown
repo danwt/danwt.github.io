@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "TLA+ quick start tutorial video"
+date:   2021-12-05T00:00:00+00:00
+tags: [sweng]
+published: true
+---
+
+In December 2021 I gave a TLA+ tutorial presentation on the basics of using the language and making the most of the Apalache and TLC model checkers.
+
+<iframe width="768" height="432" src="https://www.youtube.com/embed/peKYddIvCIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Links
+
+- [Youtube](https://youtu.be/peKYddIvCIs)

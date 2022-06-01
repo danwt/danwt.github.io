@@ -1,0 +1,170 @@
+---
+layout: post
+title:  "Chain Replication"
+date:   2022-02-20T00:00:00+00:00
+tags: [message_passing]
+published: true
+---
+
+I'm reading [Replication, Theory and Practice](https://link.springer.com/book/10.1007/978-3-642-11294-2), this is the second post of the series. I created a TLA+ model of a simple algorithm used to replicate an object in an asynchronous message passing model with crash stop failures. The communication is FIFO and reliable (up to crashes). The requirement on the algorithm is a perfect failure detector.
+
+A client writes or queries an object by calling to the head of a chain of servers. The chain of servers is totally ordered by PID. Each server, on receipt of a message from another server, either updates its state and passes on the update to the next server in the chain, or responds _directly_ to the client, in the case that the server is the last in the chain. If a server receives a message directly from the client, it knows that the servers who were ahead of it in the chain have failed, and that it is the new head of the chain. Similarly, down-chain servers can infer which servers in the chain have crashed from the gap between their own PID and the PID of the up-stream server who sends it an update.
+
+The description in the book uses an object which is a complete history of operations but I model a one-shot integer write for simplicity. Also, in contrast to primary-backup replication, this algorithm uses a timeout on the client side, as updates can be lost if a server in the chain crashes with a message sitting unread in its inbox. Timeouts are always interesting from a modeling perspective. In this instance I don't model timeouts explicitly but rather allow the client to send repeated updates. This can lead to a blow up in the model checker, as the fifo channels from the client will grow. I was interested in checking the agreement property so I opted to limit the number of client updates. This leads to a deadlock once the limit is reached so I disabled the deadlock check in the model checker config.
+
+It would be interesting to model a fully fledged version of chain replication, with repeated client updates and queries. A more comprehensive model could check liveness too.
+
+![]({{ site.url }}/assets/2022-02-20-0/chain_replication.png)
+
+## Links
+
+- [Replication, Theory and Practice (Springer)](https://link.springer.com/book/10.1007/978-3-642-11294-2)
+- [The full TLA+ model](https://github.com/danwt/chain-replication)
+
+## Code
+
+```tla
+VARIABLES
+(*Meta*)
+    \* @type: Str;
+    action,
+(*Global*)
+    \* @type: PID -> Bool;
+    crashed,
+    \* @type: <<PID, PID>> -> Seq(MSG);
+    fifo,
+(*Local*)
+    \* @type: PID -> Set(PID);
+    servers,
+    \* @type: Int; 
+    response,
+    \* @type: PID -> Int;
+    value,
+    \* @type: Int; Bound retries for model checking tractability
+    retries
+
+Max(S) == CHOOSE e \in S : \A other \in S : other <= e
+Min(S) == CHOOSE e \in S : \A other \in S : e <= other
+Succ(servers_, p) == LET LT == {e \in servers_ : e < p} IN IF LT = {} THEN p ELSE Max(LT)
+Pred(servers_, p) == LET GT == {e \in servers_ : p < e} IN IF GT = {} THEN p ELSE Min(GT)
+
+Init == 
+    /\ action = "init"
+    /\ crashed = [p \in SERVERS |-> FALSE]
+    /\ fifo = [p \in ((SERVERS \cup {CLIENT}) \X (SERVERS \cup {CLIENT})) |-> <<>>]
+    /\ servers = [p \in (SERVERS \cup {CLIENT}) |-> SERVERS]
+    /\ response = NullInt
+    /\ value = [p \in (SERVERS \cup {CLIENT}) |-> NullInt]
+    /\ retries = 0
+
+Fail ==
+    \E p, pCorrect \in SERVERS: 
+    /\ p # pCorrect
+    (*Always leave at least 1 correct process remaining*)
+    /\ ~crashed[pCorrect]
+    /\ ~crashed[p]
+    /\ crashed' = [crashed EXCEPT ![p] = TRUE]
+    /\ UNCHANGED fifo
+    /\ UNCHANGED servers
+    /\ UNCHANGED response
+    /\ UNCHANGED value
+    /\ UNCHANGED retries
+
+NotifyFail ==
+    \E p \in SERVERS \cup {CLIENT}, pCrashed \in SERVERS:
+    /\ p # CLIENT => ~crashed[p]
+    /\ p # pCrashed
+    /\ crashed[pCrashed]
+    /\ pCrashed \in servers[p]
+    /\ UNCHANGED crashed
+    /\ UNCHANGED fifo
+    /\ servers' = [servers EXCEPT ![p] = @ \ {pCrashed}]
+    /\ UNCHANGED response
+    /\ UNCHANGED value
+    /\ UNCHANGED retries
+
+ReceiveSync ==
+    \E p, prev \in SERVERS:
+    /\ ~crashed[p]
+    /\ p # prev
+    /\ 0 < Len(fifo[prev, p])
+    /\ LET 
+        m == Head(fifo[prev, p])
+        servers_ == [servers EXCEPT ![p] = {e \in @ : e <= p \/ prev <= e}]
+        IN LET
+        succ == Succ(servers_[p], p)
+        pred == Pred(servers_[p], p)
+        IN
+        /\ m.nature = _sync
+        /\ UNCHANGED crashed
+        /\ fifo' = [
+                fifo EXCEPT 
+                ![prev, p] = Tail(@),
+                ![p, succ] = IF prev = pred /\ p # succ THEN @ \o <<sync(m.value)>> ELSE @
+            ]
+        /\ servers' = servers_
+        /\ response' = IF prev = pred /\ p = succ THEN m.value ELSE response
+        /\ value' = [value EXCEPT ![p] = IF prev = pred THEN m.value ELSE @]
+        /\ UNCHANGED retries
+
+ReceiveUpdateHist ==
+    \E p \in SERVERS:
+    /\ ~crashed[p]
+    /\ 0 < Len(fifo[CLIENT, p])
+    /\ LET
+        m == Head(fifo[CLIENT, p])
+        servers_ == [servers EXCEPT ![p] = {e \in @ : e <= p}]
+        IN LET
+        succ == Succ(servers_[p], p)
+        IN
+        /\ UNCHANGED crashed
+        /\ fifo' = [
+                fifo EXCEPT 
+                ![CLIENT, p] = Tail(@),
+                ![p, succ] = IF succ = p THEN @ ELSE @ \o <<sync(m.value)>>
+            ]
+        /\ servers' = servers_
+        /\ response' = IF succ = p THEN m.value ELSE response
+        /\ value' = [value EXCEPT ![p] = m.value]
+        /\ UNCHANGED retries
+
+ClientSend == 
+    LET head == CHOOSE e \in servers[CLIENT] : (\A x \in servers[CLIENT] : x <= e) IN
+    /\ retries < Cardinality(SERVERS)
+    /\ UNCHANGED crashed
+    /\ fifo' = [fifo EXCEPT ![CLIENT, head] = @ \o <<updateHist(TARGET_VALUE)>>]
+    /\ UNCHANGED servers
+    /\ UNCHANGED response
+    /\ UNCHANGED value
+    /\ retries' = retries + 1
+
+ClientSucceed == 
+    /\ response # NullInt
+    /\ UNCHANGED crashed
+    /\ UNCHANGED fifo
+    /\ UNCHANGED servers
+    /\ UNCHANGED response
+    /\ value' = [value EXCEPT ![CLIENT] = response]
+    /\ UNCHANGED retries
+
+Next ==
+    \/ /\ Fail
+       /\ action' = "fail"
+    \/ /\ NotifyFail
+       /\ action' = "notifyFail"
+    \/ /\ ReceiveSync
+       /\ action' = "receiveSync"
+    \/ /\ ReceiveUpdateHist
+       /\ action' = "receiveUpdateHist"
+    \/ /\ ClientSend
+       /\ action' = "clientSend"
+    \/ /\ ClientSucceed
+       /\ action' = "clientSucceed"
+
+Agreement ==
+    value[CLIENT] # NullInt => 
+        /\ \A p \in SERVERS: crashed[p] \/ value[p] = TARGET_VALUE
+        /\ value[CLIENT] = TARGET_VALUE
+
+Inv == Agreement
+```

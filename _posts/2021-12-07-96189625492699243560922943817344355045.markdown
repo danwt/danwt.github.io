@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "Lower bound (space) on FIFO mutual exclusion in shared memory"
+date:   2021-12-07T00:00:00+00:00
+tags: [shared_memory]
+published: true
+---
+
+Consider an asynchronous shared memory model with no process failures. FIFO mutual exclusion provides a critical section as usual. Additionally:
+
+1. there is a doorway section when acquiring the resource. Processes enter the CS in order of completing the doorway section.
+2. there is deadlock freedom.
+3. there is obstruction freedom in all regions except resource acquisition.
+
+It turns out that the implementation space must be able to store _n_ different values where _n_ is the number of processes (so log(_n_) bits).
+
+For contradiction suppose it's possible with less than log(_n_) bits. Suppose an adversarial scheduler who schedules processes in round robin order. If Ci denotes a system configuration where Pi has taken steps until it completes its doorway, then there must exist Ci=Cj with i#j by the pigeonhole principle.
+
+Consider an execution _e_ starting from Ci where Pk enters the CS twice. Since Ci=Cj it is possible to execute _e_ from Cj. In this case Pk enters the CS a second time even though Cj has completed its doorway (by adversarial choice). This contradicts FIFO.
+
+## Links
+
+- [Hagit Attiya; Faith Ellen, Impossibility Results for Distributed Computing , Morgan & Claypool, 2014.](https://ieeexplore.ieee.org/document/6855592/)

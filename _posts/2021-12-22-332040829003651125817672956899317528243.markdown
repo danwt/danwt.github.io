@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Written TLA+ quick start tutorial with explicit state and symbolic model checking"
+date:   2021-12-22T00:00:00+00:00
+tags: [sweng]
+published: true
+---
+
+A couple of weeks ago I created some tutorial materials for beginners to TLA+. The tutorials aim to quickly teach a skill set sufficient and necessary to do real interesting work in TLA+. The [cheatsheet](https://mbt.informal.systems/docs/tla_basics_tutorials/tla+cheatsheet.html) is even valuable for those with TLA+ experience.
+
+## Links
+
+- [Full writeup](https://mbt.informal.systems/docs/tla_basics_tutorials/tutorial.html)
+- [Markdown with syntax highlighting](<https://github.com/informalsystems/modelator/tree/main/jekyll/docs/tla_basics_tutorials>)
+- [Permalink](https://web.archive.org/web/20211222144057/https://mbt.informal.systems/docs/tla_basics_tutorials/tutorial.html)
+- [TLA+ cheatsheet](https://mbt.informal.systems/docs/tla_basics_tutorials/tla+cheatsheet.html)

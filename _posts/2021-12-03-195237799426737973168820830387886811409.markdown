@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Lower bound (time) on approximate agreement in shared memory"
+date:   2021-12-03T00:00:00+00:00
+tags: [shared_memory]
+published: true
+---
+
+Consider an asynchronous shared memory model with no process failures. Approximate agreement between _n_ processes is the problem of agreeing _n_ output values within _eps_ of each other, and falling in the interval [min(input values), max(input values)].
+
+Consider a solution implementing approximate agreement for _n_ input values (one per process) in {0, 1} and _eps_ < 1. If the solution also provides solo termination (each process will terminate if run sufficiently long) then the time complexity is at least _n_.
+
+For contradiction suppose it is possible in less than _n_ steps.
+
+Take two solo executions of Pi and Pj starting at a configuration C where all registers are empty and the input values of Pi and Pj are 0 and 1. Since they are solo executions, by validity, the outputs must be 0 and 1.
+
+In a solo execution by some Pk, it does not have time to read the register of all the other processes and write to its own register. If Pi does not read all other processes registers then Pi cannot distinguish the execution of Pj starting from C. If it does read other registers but does not write to its own register, then Pj cannot distinguish the execution of Pi starting from C. In either case there is a concatenation of solo executions resulting in faulty pairwise execution.
+
+## Links
+
+- [Hagit Attiya; Faith Ellen, Impossibility Results for Distributed Computing , Morgan & Claypool, 2014.](https://ieeexplore.ieee.org/document/6855592/)

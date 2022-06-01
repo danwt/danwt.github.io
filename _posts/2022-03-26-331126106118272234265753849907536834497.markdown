@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Logical Physical Clocks and Consistent Snapshots in Globally Distributed Databases"
+date:   2022-03-26T00:00:00+00:00
+tags: [TODO]
+published: false
+---
+
+
+
+## Links
+
+- [Logical Physical Clocks and Consistent Snapshots in Globally Distributed Databases](https://cse.buffalo.edu/tech-reports/2014-04.pdf)
