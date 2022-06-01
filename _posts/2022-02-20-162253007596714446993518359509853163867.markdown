@@ -10,7 +10,7 @@ I'm reading [Replication, Theory and Practice](https://link.springer.com/book/10
 
 A client writes or queries an object by calling to the head of a chain of servers. The chain of servers is totally ordered by PID. Each server, on receipt of a message from another server, either updates its state and passes on the update to the next server in the chain, or responds _directly_ to the client, in the case that the server is the last in the chain. If a server receives a message directly from the client, it knows that the servers who were ahead of it in the chain have failed, and that it's the new head of the chain. Similarly, down-chain servers can infer which servers in the chain have crashed from the gap between their own PID and the PID of the up-stream server who sends it an update.
 
-![]({{ site.url }}/assets/2022-02-20/chain_replication.png){: width="90%" .centered }
+![]({{ site.url }}/assets/2022-02-20/diagram.png){: width="90%" .centered }
 
 The description in the book uses an object which is a complete history of operations but I model a one-shot integer write for simplicity. In contrast to primary-backup replication, this algorithm uses a timeout on the client side, as updates can be lost if a server in the chain crashes with a message sitting unread in its inbox. Timeouts are always interesting from a modeling perspective. In this instance I don't model timeouts explicitly but rather allow the client to send repeated updates. This can lead to a blow up in the model checker, as the FIFO channels from the client will grow. I was interested in checking the agreement property so I opted to limit the number of client updates. This leads to a deadlock once the limit is reached so I disabled the deadlock check in the model checker config.
 
