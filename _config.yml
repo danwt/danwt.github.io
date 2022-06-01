@@ -15,7 +15,7 @@ google_analytics: G-LQ65HF897P # Put your Google Analytics code
 author:
   name: Daniel Tisdall
   bio: software @ planet earth <br> algorithms | concurrency | correctness | sw eng </br>
-  picture: assets/headshot.jpg 
+  picture: assets/images/headshot.jpg 
   github: danwt # github username
   #twitter: onepase # twitter username
   #facebook: onepase # facebook username
