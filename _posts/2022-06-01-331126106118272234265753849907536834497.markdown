@@ -63,6 +63,16 @@ The most satisfied developers are the ones who feel their work is impactful and 
 Programmers tend to choose the language for their project based on the languages they have already used, or language popularity. There is a tendency for programmers to stay within language families, reuse languages they have already used, or choose popular languages.
 When choosing a new language, the open source library ecosystem and the ability to extend existing code are the most important factors. Other important factors include team and personal familiarity, performance and portability. Simplicity and commercial libraries are the least important factors. TODO: revisit language feature section
 
+## Program Comprehension and Code Complexity Metrics: An fMRI Study
+
+TODO:
+
+## Architectural mismatch: why reuse is so hard
+
+TODO:
+
+## Why software projects need heroes
+
 ## Links
 
 - [Vivek Haldar's youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
