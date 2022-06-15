@@ -6,7 +6,7 @@ tags: [sweng]
 published: false
 ---
 
-I highlight interesting software engineering papers that I found in various places. They are lighter reading than technical papers but are nevertheless interesting. I did not choose them based on any criteria, but just my interest. I also included some papers from other fields if it seemed appropriate.
+I highlighted some software engineering papers that I found in various places. They are lighter reading than technical papers but are still interesting. I chose them by my interest rather than a criteria. I included some papers from other fields where it seemed appropriate.
 
 ## Large Scale Analysis of Multitasking Behavior During Remote Meetings
 
@@ -73,7 +73,17 @@ TODO:
 
 ## Why software projects need heroes
 
+TODO:
+
+## Physiological Effects of Crunch
+
+TODO:
+
+## Static vs dynamic typed languages: an intentionally rigged experiment
+
+TODO:
+
 ## Links
 
-- [Vivek Haldar's youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
-- [Large Scale Analysis of Multitasking Behavior During Remote Meetings](https://arxiv.org/pdf/2101.11865.pdf)
+- [Vivek Haldar's Youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
+- [Ian Schreiber's talk on the Physiological Effects of Crunch](https://www.youtube.com/watch?v=Sb2U_9IGgc0)
