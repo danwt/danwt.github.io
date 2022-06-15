@@ -67,10 +67,6 @@ When choosing a new language, the open source library ecosystem and the ability 
 
 TODO:
 
-## Architectural mismatch: why reuse is so hard
-
-TODO:
-
 ## Why software projects need heroes
 
 TODO:
@@ -80,6 +76,16 @@ TODO:
 TODO:
 
 ## Static vs dynamic typed languages: an intentionally rigged experiment
+
+TODO:
+
+## <https://blog.pragmaticengineer.com/project-management-at-big-tech/>
+
+TODO:
+
+## Electronic Publication and the Narrowing of Science and Scholarship
+
+## A Time Leap Challenge for SAT Solving
 
 TODO:
 
