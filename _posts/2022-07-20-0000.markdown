@@ -86,9 +86,11 @@ The authors found that a group of users performed better on a Tower of Hanoi gam
 
 ## Electronic Publication and the Narrowing of Science and Scholarship
 
-## A Time Leap Challenge for SAT Solving
+As scientific works have become easier to find online compared to in the past, the distribution of citations has shifted so that the citations are more concentrated among fewer papers, and those papers are more recent.
 
-TODO:
+## A Time Leap Challenge for SAT Solving (2020)
+
+The relative impact of algorithm improvements and hardware improvements on SAT benchmarks since in the years 2000-2020 have been roughly equal. That is: both algorithm and hardware improvements significantly improve the overall effectiveness of SAT techniques, and in roughly equal measure.
 
 ## Links
 
