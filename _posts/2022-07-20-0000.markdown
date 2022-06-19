@@ -6,7 +6,7 @@ tags: [sweng]
 published: false
 ---
 
-I highlighted some software engineering papers that I found in various places. They are lighter reading than technical papers but are interesting. I chose them by my interest rather than a criteria. I included some papers from other fields where it seemed appropriate.
+I wrote on software engineering papers and articles. They are lighter reading than technical papers but are interesting. I chose them by my interest rather than a criteria. I included some papers from nearby fields where it seemed appropriate.
 
 ## How Work From Home Affects Collaboration (in the pandemic)
 
