@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The case for learned index structures"
+title:  "The Case for Learned Index Structures"
 date:   2022-07-16T00:00:00+00:00
 tags: []
 published: false

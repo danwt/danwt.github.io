@@ -2,7 +2,7 @@
 layout: post
 title:  "Lower bound (time) on approximate agreement in shared memory"
 date:   2021-12-03T00:00:00+00:00
-tags: [shared_memory]
+tags: [concurrency]
 published: true
 ---
 

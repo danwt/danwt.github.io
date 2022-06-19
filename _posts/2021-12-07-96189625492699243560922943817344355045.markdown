@@ -2,7 +2,7 @@
 layout: post
 title:  "Lower bound (space) on FIFO mutual exclusion in shared memory"
 date:   2021-12-07T00:00:00+00:00
-tags: [shared_memory]
+tags: [concurrency]
 published: true
 ---
 

@@ -6,7 +6,7 @@ tags: [sweng]
 published: false
 ---
 
-I highlighted some software engineering papers that I found in various places. They are lighter reading than technical papers but are still interesting. I chose them by my interest rather than a criteria. I included some papers from other fields where it seemed appropriate.
+I highlighted some software engineering papers that I found in various places. They are lighter reading than technical papers but are interesting. I chose them by my interest rather than a criteria. I included some papers from other fields where it seemed appropriate.
 
 ## Large Scale Analysis of Multitasking Behavior During Remote Meetings
 
@@ -14,11 +14,13 @@ Longer meetings and meetings with more people have more multitasking. Morning me
 
 ## How Work From Home Affects Collaboration (in the pandemic)
 
-Working from home reduces the number of meeting hours and increases the amount of time spent messaging. The number of focused hours is overall greater than when working in an office.
+Working from home reduces the number of meeting hours and increases the amount of time spent sending messages. The number of focused hours is overall greater than when working in an office. Behavior changed less for those who worked from home before the pandemic than for those who shifted to working from home.
 
 ## A Rational Design Process - How and Why to Fake It
 
-There will never be a perfect software development process. Many factors contribute to this. For example, the people who want the software to be built often do not fully understand what they want. Developers may have ulterior motives, for example, being fascinated by a particular technology. The authors argue that despite the impossibility of a perfect process, we should still strive for it. Actionably, we should write good documentation. TODO: read
+There will never be a perfect software development process. Many factors contribute to this. For example, the people who want the software to be built often do not fully understand what they want. Developers may have ulterior motives, for example, being fascinated by a particular technology. The authors argue that despite the impossibility of a perfect process, we should still strive for it.
+
+The 'perfect' process documented here appears waterfall-like, with stringent and complete requirements and module architecture mapped out before any implementation. The discussion on documentation is more entertaining; documentation is poorly organized and it consists of boring verbose prose and inconsistent and vague terminology. Moreover, it's usually written towards the end of the project when the authors take major ideas for granted, and are only interested in writing the small details. Documentation can be improved by using strictly typed shorthands, and including each fact once and only once. Each section should answer a defined question.
 
 ## The Paradox of the Assisted User: Guidance can be Counterproductive
 

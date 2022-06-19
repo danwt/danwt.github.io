@@ -2,7 +2,7 @@
 layout: post
 title:  "Large-scale Incremental Processing Using Distributed Transactions and Notifications a.k.a. Percolator"
 date:   2022-03-05T00:00:00+00:00
-tags: [message_passing]
+tags: [concurrency]
 published: true
 ---
 
