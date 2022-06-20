@@ -94,6 +94,12 @@ As scientific works have become easier to find online compared to in the past, c
 
 The relative impact of algorithm improvements and hardware improvements on SAT benchmarks since in the years 2000-2020 have been roughly equal. That is: both algorithm and hardware improvements significantly improve the overall effectiveness of SAT techniques, and in roughly equal measure.
 
+### TODO: the below are unsorted
+
+## Are we really engineers?
+
+[Hillel Wayne](<https://www.hillelwayne.com/post/are-we-really-engineers/>) conducted a [series of interviews](<https://www.hillelwayne.com/post/are-we-really-engineers/>) with individuals who had worked in traditional engineering and software, to find out if software engineering is really engineering. It was too hard to give an answer based on facts; the conclusion is that something is engineering when enough of the people doing the thing call it so.
+
 ## Links
 
 - [Vivek Haldar's Youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
