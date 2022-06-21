@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Gems from applying SMT"
+date:   2022-07-21T00:00:00+00:00
+tags: [TODO]
+published: false
+---
+
+
+
+## Links
+
+- [SAT/SMT by Example](https://sat-smt.codes/SAT_SMT_by_example.pdf)
