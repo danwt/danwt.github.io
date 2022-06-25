@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Gems from applying SMT"
+title:  "Favourites from practical SAT/SMT"
 date:   2022-07-21T00:00:00+00:00
 tags: [TODO]
 published: false
