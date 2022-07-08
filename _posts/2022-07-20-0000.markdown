@@ -108,3 +108,4 @@ The relative impact of algorithm improvements and hardware improvements on SAT b
 
 - [Vivek Haldar's Youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
 - [Ian Schreiber's talk on the Physiological Effects of Crunch](https://www.youtube.com/watch?v=Sb2U_9IGgc0)
+- [https://www.linkedin.com/pulse/what-great-teams-do-paul-tozour/]
