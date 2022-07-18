@@ -100,6 +100,8 @@ The relative impact of algorithm improvements and hardware improvements on SAT b
 
 [Hillel Wayne](<https://www.hillelwayne.com/post/are-we-really-engineers/>) conducted a [series of interviews](<https://www.hillelwayne.com/post/are-we-really-engineers/>) with individuals who had worked in traditional engineering and software, to find out if software engineering is really engineering. It was too hard to give an answer based on facts; the conclusion is that something is engineering when enough of the people doing the thing call it so.
 
+## context switching, they have nice references https://contextkeeper.io/blog/the-real-cost-of-an-interruption-and-context-switching/
+
 ## Links
 
 - [Vivek Haldar's Youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
