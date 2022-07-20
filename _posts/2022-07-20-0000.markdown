@@ -102,6 +102,8 @@ The relative impact of algorithm improvements and hardware improvements on SAT b
 
 ## context switching, they have nice references https://contextkeeper.io/blog/the-real-cost-of-an-interruption-and-context-switching/
 
+## monitor real estate. I think microsoft did studies on this. there are also nice anecdotes w.r.t john carmack
+
 ## Links
 
 - [Vivek Haldar's Youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
