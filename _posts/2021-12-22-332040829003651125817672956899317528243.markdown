@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Written TLA+ quick start tutorial with explicit state and symbolic model checking"
+title:  "Concise TLA+ tutorial with state enumerating and symbolic model checking"
 date:   2021-12-22T00:00:00+00:00
 tags: [sweng]
 published: true

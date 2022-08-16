@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TLA+ quick start tutorial video"
+title:  "Get started with TLA+ tutorial video"
 date:   2021-12-05T00:00:00+00:00
 tags: [concurrency]
 published: true
