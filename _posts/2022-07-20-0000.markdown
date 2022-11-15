@@ -100,7 +100,7 @@ The relative impact of algorithm improvements and hardware improvements on SAT b
 
 [Hillel Wayne](<https://www.hillelwayne.com/post/are-we-really-engineers/>) conducted a [series of interviews](<https://www.hillelwayne.com/post/are-we-really-engineers/>) with individuals who had worked in traditional engineering and software, to find out if software engineering is really engineering. It was too hard to give an answer based on facts; the conclusion is that something is engineering when enough of the people doing the thing call it so.
 
-## context switching, they have nice references https://contextkeeper.io/blog/the-real-cost-of-an-interruption-and-context-switching/
+## context switching, they have nice references <https://contextkeeper.io/blog/the-real-cost-of-an-interruption-and-context-switching/>
 
 ## monitor real estate. I think microsoft did studies on this. there are also nice anecdotes w.r.t john carmack
 
@@ -109,3 +109,8 @@ The relative impact of algorithm improvements and hardware improvements on SAT b
 - [Vivek Haldar's Youtube channel](https://www.youtube.com/c/VivekHaldar/videos)
 - [Ian Schreiber's talk on the Physiological Effects of Crunch](https://www.youtube.com/watch?v=Sb2U_9IGgc0)
 - [https://www.linkedin.com/pulse/what-great-teams-do-paul-tozour/]
+
+TODO: other nice resources I'd like to comment on:
+
+- <https://www.youtube.com/watch?v=qaO00CLqLkI> 'destructive criticism in code review'
+- <https://www.youtube.com/watch?v=_SJL7vepQvU> 'why you should do code reviews in reverse order'
