@@ -6,7 +6,7 @@ tags: [concurrency]
 published: true
 ---
 
-In December 2021 I gave a TLA+ tutorial presentation on the basics of using the language and making the most of the Apalache and TLC model checkers.
+A TLA+ tutorial presentation on the basics of using the language and making the most of the Apalache and TLC model checkers.
 
 ## Links
 

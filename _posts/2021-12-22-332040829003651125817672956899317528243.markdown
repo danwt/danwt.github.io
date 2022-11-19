@@ -6,7 +6,7 @@ tags: [sweng]
 published: true
 ---
 
-A couple of weeks ago I created some tutorial materials for TLA+ beginners. The aim is to quickly teach a sufficient and necessary skill set to do real interesting work in TLA+. The [cheatsheet](https://mbt.informal.systems/docs/tla_basics_tutorials/tla+cheatsheet.html) is even valuable for those with TLA+ experience.
+Here are a set of TLA+ tutorials for beginners. The aim is to quickly teach a sufficient and necessary skill set to do real interesting work in TLA+. The [cheatsheet](https://mbt.informal.systems/docs/tla_basics_tutorials/tla+cheatsheet.html) is even valuable for those with TLA+ experience.
 
 ## Links
 

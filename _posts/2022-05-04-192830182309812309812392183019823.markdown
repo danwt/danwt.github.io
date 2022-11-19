@@ -6,7 +6,7 @@ tags: [sweng]
 published: true
 ---
 
-AWS [publishes PDFs](https://aws.amazon.com/builders-library) containing tips and tricks for building scalable systems. I tried to trim the fat and present valuable points from each article in around two paragraphs. I downloaded the PDFs on March 5th 2022, so articles posted after that date aren't included. I've given star review ratings.
+AWS [publishes PDFs](https://aws.amazon.com/builders-library) containing tips and tricks for building scalable systems. We tried to trim the fat and present valuable points from each article in around two paragraphs. The PDFs are from March 5th 2022, so articles posted after that date aren't included. Star review ratings are given.
 
 ## Contents
 
@@ -99,7 +99,7 @@ Use token-bucket like algorithms to rate limit clients. It's a good idea to give
 
 Using quotas raises the question of how to scale quota tracking services. For example, consider a packet stream with a large number of different users sending packets. It should be possible to rate limit each user using a constant memory algorithm, even if the users all have different quotas.
 
-I diverge from the article here as it mentions algorithms 'Heavy Hitter, Top Talkers and Counting Bloom Filters' and I could only find a canonical description of a Counting Bloom Filter. The algorithms are for a problem class known as Top-k. An online algorithm for the Top-k problem finds the k most frequent elements from an online stream. A solution does *not* also solve the rate limiting problem if each user has a different quota. I assume the strategy (omitted in the article) is to only *periodically* compare element counts provided by e.g. a Counting Bloom Filter, with the quota.
+We diverge from the article here as it mentions algorithms 'Heavy Hitter, Top Talkers and Counting Bloom Filters' and we could only find a canonical description of a Counting Bloom Filter. The algorithms are for a problem class known as Top-k. An online algorithm for the Top-k problem finds the k most frequent elements from an online stream. A solution does *not* also solve the rate limiting problem if each user has a different quota. We assume the strategy (omitted in the article) is to only *periodically* compare element counts provided by e.g. a Counting Bloom Filter, with the quota.
 
 ### Ensuring rollback safety during deployments
 
@@ -111,7 +111,7 @@ Do test the ability to roll changes forward *and* backwards, in a production-lik
 
 ### Challenges with distributed systems
 
-I skipped it.
+Skipped it.
 
 ### Caching challenges and strategies
 
@@ -125,7 +125,7 @@ Test your cached systems to see what happens if the cache fails or requires repo
 
 ### Building dashboards for operational visibility
 
-The article contains wisdom on making good dashboards. I forgo a summary and suggest reading a dedicated UX design book instead.
+The article contains wisdom on making good dashboards. We forgo a summary and suggest reading a dedicated UX design book instead.
 
 ### Avoiding insurmountable queue backlogs
 

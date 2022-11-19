@@ -20,7 +20,7 @@ That is, it is not possible to read a write in less than the time it takes to se
 
 Proof: for contradiction, suppose the opposite. If P0 WRITEs at t=0 and P1 READs at t=W then by R+W P1's READ has returned. P1 cannot in the worst case distinguish executions where P0 did WRITE(1) or WRITE(2) if W+R < d, as the message will not have reached him: contradiction □
 
-Fairly obvious, I guess.
+Fairly obvious, we suppose.
 
 ## Links
 

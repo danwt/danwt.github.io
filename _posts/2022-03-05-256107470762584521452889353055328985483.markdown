@@ -6,7 +6,7 @@ tags: [concurrency]
 published: true
 ---
 
-I've had this paper on my to-read list for a while: apparently it made a splash in the transaction processing world. Google presents Percolator, a system that provides random concurrent access to a multi petabyte repository while maintaining invariants. The paper is from 2010, so it might not be state of the art anymore.
+Apparently this paper made a splash in the transaction processing world. Google presents Percolator, a system that provides random concurrent access to a multi petabyte repository while maintaining invariants. The paper is from 2010, so it might not be state of the art anymore.
 
 Percolator requires a layer beneath it. The layer provides access to values with tuple shaped keys. The tuple is made from a row, column and timestamp. The layer provides atomic read/write access to single rows. Additionally, Percolator requires a global monotonically increasing timestamp oracle.
 

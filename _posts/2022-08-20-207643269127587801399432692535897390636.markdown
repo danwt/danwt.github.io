@@ -6,9 +6,9 @@ tags: [blockchain]
 published: true
 ---
 
-I'm lucky to be on the [Cosmos Hub](https://www.mintscan.io/cosmos) blockchain development team at [Informal Systems](https://github.com/informalsystems/). [Interchain Security](https://github.com/cosmos/interchain-security) is the name of a new feature launching for the [Cosmos Hub blockchain](https://www.mintscan.io/cosmos) soon, which allows blockchains to share the security properties of other blockchains.
+[Interchain Security](https://github.com/cosmos/interchain-security) is the name of a new feature launching for the [Cosmos Hub blockchain](https://www.mintscan.io/cosmos) soon, which allows blockchains to share the security properties of other blockchains.
 
-I travelled to Seoul in August 2022 to give a workshops on Interchain Security at two events: [HackATOM Seoul 2022](https://www.buidl.asia/hackatom-seoul-2022) and the [DSRV Web 3.0 Builder's Summer House 2022](https://buildershouse.dsrvlabs.com/ad78cea4-2ccf-4dab-bfd6-e76a05540d17). The presentation I gave at HackATOM was streamed live. Here is the recording
+We traveled to Seoul in August 2022 to give a workshops on Interchain Security at two events: [HackATOM Seoul 2022](https://www.buidl.asia/hackatom-seoul-2022) and the [DSRV Web 3.0 Builder's Summer House 2022](https://buildershouse.dsrvlabs.com/ad78cea4-2ccf-4dab-bfd6-e76a05540d17). The presentation I gave at HackATOM was streamed live. Here is the recording
 
 ## Links
 
