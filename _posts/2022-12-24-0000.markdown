@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Soft skill books"
+date:   2022-12-24T00:00:00+00:00
+tags: [TODO]
+published: false
+---
+
+
+## [Turn the Ship Around!: A True Story of Turning Followers into Leaders](https://www.goodreads.com/book/show/16158601-turn-the-ship-around)
+
+Author David Marquet was a commander of nuclear submarines in the US navy. He took over command of the USS Santa Fe in 1999 and turned it from being one of the worst performing ships in the navy to the one the best. The book explains his leader-leader approach, which tries to make every member of a hierarchy into a leader responsible for the success of their own subtree. Thus, each leader is a leader of leaders. We really enjoyed this book because it pairs concrete advice with interesting anecdotes from the world of submarining, which we knew nothing about.
+
+These are the principles of leader-leader that we took away
+
+1. Make all positions about responsibility rather than privilege.
+2. Specify goals, not methods. Resist the urge to specify 'how'.
+3. Encourage self development.
+4. Encourage informal information sharing.
+5. Certify competence with tests.
+
+The book is more to-the-point than other books in this genre, and very concrete. Rating: 5/5.
+
+## Links
+
+- [Turn the Ship Around!: A True Story of Turning Followers into Leaders](https://www.goodreads.com/book/show/16158601-turn-the-ship-around)
