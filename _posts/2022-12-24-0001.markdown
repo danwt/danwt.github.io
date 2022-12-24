@@ -9,8 +9,21 @@ usemathjax: true
 
 The 2018 paper 'Why Is Random Testing Effective for Partition Tolerance Bugs?' by Rupak Majumdar, Filip Niksic shows that several notions of high test coverage can be achieved with a number of tests logarithmic in the number of cases to be tested. Moreover, the tests are chosen randomly. We explain the most general construction here. The paper contains more.
 
-$$E=mc^2$$
+Consider a set $M$ and a set $T$ whose elements are subsets of $M$. We want to find a subset $\mathcal{F}$ of $T$ which is small and where for each $x \in M :\exists t \in F$ st $x \in t$.
+
+If we know a positive lower bound $p$ over all fixed elements $x \in M$, for which a random $t \in T$ contains $x$, then we can express the probability that a candidate $\mathcal{F}_{candidate}$ satisfies the properties of $\mathcal{F}$ in terms of $|\mathcal{F}_{candidate}|$.
+
+To show this we need to remind ourselves of high school logarithms, and some straightforward probability. We'll say a set $S$ _covers_ $x$ if $x \in S$.
+
+Proof:
+
+Fix a subset $\mathcal{F} \subseteq T$ chosen uniformly randomly. We know that a an element $t \in \mathcal{F}$ covers $x
+
+$$
+
+$$
 
 ## Links
 
 - [Why is random testing effective for partition tolerance bugs?](https://www.semanticscholar.org/paper/Why-is-random-testing-effective-for-partition-bugs-Majumdar-Niksic/8fc5840c76d3478c36b85b9153d407abf810135F9)
+- [Youtube talk by Niksic](https://www.youtube.com/watch?v=g5cehS7ZSJ8)
