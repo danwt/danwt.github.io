@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Why does Jepsen Work?"
+date:   2022-12-24T00:00:00+00:00
+tags: [TODO]
+published: true
+usemathjax: true
+---
+
+The 2018 paper 'Why Is Random Testing Effective for Partition Tolerance Bugs?' by Rupak Majumdar, Filip Niksic shows that several notions of high test coverage can be achieved with a number of tests logarithmic in the number of cases to be tested. Moreover, the tests are chosen randomly. We explain the most general construction here. The paper contains more.
+
+$$E=mc^2$$
+
+## Links
+
+- [Why is random testing effective for partition tolerance bugs?](https://www.semanticscholar.org/paper/Why-is-random-testing-effective-for-partition-bugs-Majumdar-Niksic/8fc5840c76d3478c36b85b9153d407abf810135F9)
