@@ -17,9 +17,9 @@ To show this we need to remind ourselves of high school logarithms, and some str
 
 Proof:
 
-Fix a subset $\mathcal{F} \subseteq T$ chosen uniformly randomly. We know that a an element $t \in \mathcal{F}$ covers $x
+Fix a subset \\(\mathcal{F}\\) \subseteq T$ chosen uniformly randomly. We know that a an element $t \in \mathcal{F}$ covers $x
 
-$$
+$$ test
 
 $$
 
