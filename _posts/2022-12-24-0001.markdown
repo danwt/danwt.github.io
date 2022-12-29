@@ -9,19 +9,49 @@ mathjax: true
 
 The 2018 paper 'Why Is Random Testing Effective for Partition Tolerance Bugs?' by Rupak Majumdar, Filip Niksic shows that several notions of high test coverage can be achieved with a number of tests logarithmic in the number of cases to be tested. Moreover, the tests are chosen randomly. We explain the most general construction here. The paper contains more.
 
-Consider a set \\(M\\) and a set \\(T\\) whose elements are subsets of \\(M\\). We want to find a subset \\(\mathcal{F}\\) of \\(T\\) which is small and where for each \\(x \in M :\exists t \in F\\) st \\(x \in t\\) .
+Consider a finite set \\(M\\) and a set \\(T\\) whose elements are subsets of \\(M\\). We want to find a subset \\(\mathcal{F}\\) of \\(T\\) which is small and where for each \\(x \in M :\exists t \in F\\) st \\(x \in t\\) . That is, we want to find a small set of tests from \\(T\\) which cover all the cases in \\(M\\).
 
-If we know a positive lower bound \\(p\\) over all fixed elements \\(x \in M\\), for which a random \\(t \in T\\) contains \\(x\\), then we can express the probability that a candidate \\(\mathcal{F}\_{candidate}\\) satisfies the properties of \\(\mathcal{F}\\) in terms of \\(\vert \mathcal{F}_{candidate} \vert \\) .
+If we know a positive lower bound probability \\(p\\) over all fixed elements \\(x \in M\\), for which a random \\(t \in T\\) contains \\(x\\), then we can express the probability that a candidate \\(\mathcal{F}\_{candidate}\\) satisfies the properties of \\(\mathcal{F}\\) in terms of \\(\vert \mathcal{F}_{candidate} \vert \\) .
 
-To show this we need to remind ourselves of high school logarithms, and some straightforward probability. We'll say a set \\(S\\) _covers_ \\(x\\) if \\(x \in S\\) .
+To show this we need to remind ourselves of high school logarithms, and some straightforward probability. We'll say a set \\(S\\) _covers_ \\(x\\) if \\(x \in S\\), and we'll abuse this language.
 
 Proof:
 
-Fix a subset \\(\mathcal{F} \subseteq T\\) chosen uniformly randomly. We know that a an element \\(t \in \mathcal{F}\\) covers \\(x\\) .
+Fix a subset \\(\mathcal{F} \subseteq T\\) chosen uniformly randomly. We know that a an element \\(t \in \mathcal{F}\\) covers any fixed element \\(x \in M \\) with probability at least \\(p\\) . The probability that \\(x\\) is not covered is therefore \\(\leq 1-p\\). When taken over all elements of \\(\mathcal{F}\\) we have \\(\mathcal{P}(\mathcal{F} \text{ does not cover } x) \leq (1-p)^{\vert \mathcal{F} \vert}\\).
+
+The probability of \\(\mathcal{F}\\) not covering an element of \\(M\\) cannot be greater than the sum of probabilities of missing a single given element (union bound). So we have
 
 \\[
-testkajdfin
+    \mathcal{P}(\mathcal{F} \text{ does not cover } M) \leq \vert M \vert (1-p)^{\vert \mathcal{F} \vert}
 \\]
+
+We want to bound this
+
+\\[
+     \vert M \vert (1-p)^{\vert \mathcal{F} \vert} < \epsilon
+\\]
+
+in terms of \\(\vert \mathcal{F} \vert \\).
+
+We have
+
+\\[
+      (1-p)^{\vert \mathcal{F} \vert} < \frac{\epsilon}{\vert M \vert}
+\\]
+
+and we can take logarithm of both sides base \\(1-p\\), which is a decreasing function so we flip the inequality.
+
+\\[
+      \log_{(1-p)}(\frac{\epsilon}{\vert M \vert}) < \vert \mathcal{F} \vert
+\\]
+
+Using the fact that for any basis \\(b\\) and number \\(a\\) we have \\(e^{\log(b)\log_{b}(a)} = e^{log(a)}\\) we can get back an expression using the natural logarithm
+
+\\[
+      \frac{\log(\epsilon) - \log(\vert M \vert)}{\log(1-p)} < \vert \mathcal{F} \vert
+\\]
+
+we obtain a relation between our desired confidence \\(\epsilon\\) and \\(\vert \mathcal{F} \vert \\) .
 
 ## Links
 
