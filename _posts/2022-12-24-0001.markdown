@@ -11,6 +11,8 @@ Why does the highly regarded testing tool [Jepsen](https://jepsen.io/), which ra
 
 The 2018 [paper](https://www.semanticscholar.org/paper/Why-is-random-testing-effective-for-partition-bugs-Majumdar-Niksic/8fc5840c76d3478c36b85b9153d407abf810135F9) 'Why Is Random Testing Effective for Partition Tolerance Bugs?' by Rupak Majumdar, Filip Niksic shows that several notions of high test coverage can be achieved with a number of tests logarithmic in the number of cases to be tested. Moreover, the tests are chosen randomly. We explain the most general construction here. The paper contains more.
 
+## A lower bound
+
 Consider a finite set \\(M\\) and a set \\(T\\) whose elements are subsets of \\(M\\). We want to find a subset \\(\mathcal{F}\\) of \\(T\\) which is small and where for each \\(x \in M :\exists t \in F\\) st \\(x \in t\\) . That is, we want to find a small set of tests from \\(T\\) which cover all the cases in \\(M\\).
 
 If we know a positive lower bound probability \\(p\\) over all fixed elements \\(x \in M\\), for which a random \\(t \in T\\) contains \\(x\\), then we can express the probability that a candidate \\(\mathcal{F}\_{candidate}\\) satisfies the properties of \\(\mathcal{F}\\) in terms of \\(\vert \mathcal{F}_{candidate} \vert \\) and a factor logarithmic in \\(\vert M \vert\\).
@@ -61,7 +63,13 @@ If \\(p\\) is sufficiently small then \\(- \log(1-p) < p\\) and we have the conv
 
 We obtain a relation between our desired confidence \\(\epsilon\\) and \\(\vert \mathcal{F} \vert \\), and this scales with \\(\vert M \vert\\) .
 
-The paper says that it's difficult to derive bounds for more 'dynamic' notions of testing and coverage. For now, we probably want to follows Ashish Darbari's [advice](https://youtu.be/PqVg0xR_UdI?t=952) and keep striving for better correctness than what we get from just leaving everything 'in the hands of random seeds'.
+## Link to Jepsen
+
+One way Jepsen can find bugs is by testing cases where a particular subset of network nodes of size \\(k\\) is distributed evenly in a \\(k\\)-partition of the whole network. In this case \\(M\\) contains all subsets of nodes with size \\(k\\), and \\(T\\) contains all \\(k\\)-partitions. An element of \\(t \in T\\) maps to an element of \\(x \in M\\) if all nodes in \\(x\\) are in a different block (partition element) of \\(t\\).
+
+## Takeaway
+
+The paper says that it's difficult to derive bounds for more 'dynamic' notions of testing and coverage, those involving timing and so on. For now, we probably want to follows Ashish Darbari's [advice](https://youtu.be/PqVg0xR_UdI?t=952) and keep striving for better correctness than what we get from just leaving everything 'in the hands of random seeds'.
 
 ## Links
 
