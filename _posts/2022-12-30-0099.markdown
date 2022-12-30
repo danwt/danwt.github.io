@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Lower bound on the number of rounds in crash stop synchronous consensus, by 'chain argument'"
+title:  "Lower bound on the number of rounds in crash stop synchronous consensus ( by 'chain argument' )"
 date:   2022-12-30T00:00:00+00:00
 tags: [TODO]
 published: true
@@ -13,7 +13,7 @@ We suppose binary consensus in a synchronous model where each round consists of 
 
 Here is an informal reasoning and description of the 'chain argument'. The full proof is in [Impossibility Results for Distributed Computing](https://ieeexplore.ieee.org/document/6855592/).
 
-##  Structure
+## Structure
 
 First, we reason that there in an initial state with two executions \\(\alpha\\) and \\(\gamma\\) such that the consensus leads to a different result. In \\(\alpha\\) exactly one process crashes at the beginning of the first round. In \\(\gamma\\) no processes crash.
 
@@ -32,6 +32,14 @@ There must be some \\(j\\) where \\(C_j, C_{j+1}\\) decide different results.
 Intuitively, an execution \\(\alpha_{j+1}'\\) starting from \\(C_{j+1}\\) where \\(p_j\\) crashes at the start is not distinguishable from \\(\alpha_j\\) following \\(C_j\\). This gives us the result. They must decide the same results which means that \\(\alpha_{j+1}\\) and \\(\alpha_{j+1}'\\) must decide *different* results.
 
 ![]({{ site.url }}/assets/2022-12-30/diagram0.png){: width="65%" .centered }
+
+## b) Any \\(f\\) round execution is equivalent to one without crashes
+
+Statement 2: any \\(f\\) round execution with \\(f + 2 \leq n\\) processes is equivalent to one without crashes.
+
+The trick is as follows: in a round where a process \\(p_i\\) crashes, the crash may occur before \\(p_i\\) has had a chance to send all their outbound messages. If we suppose that \\(p_i\\) fails to send a message to \\(p_j\\), then there must be a live process \\(p_k\\) who cannot distinguish this execution from one where \\(p_i\\) *did* send a message to \\(p_j\\). We know \\(p_k\\) must exist because \\(2 \leq n-f\\). We can apply this to say that the execution where \\(p_i\\) crashes mid-round is indistinguishable from one where it crashes at the start of the next round.
+
+This gives us an induction. We can move crashes in the \\(f\\)th round to the start of non-existent \\((f+1)\\)th round. Then, we can move crashes in the \\(r\\)th round to the \\((r+1)\\)th round and by induction eventually to the start of non-existent \\((f+1)\\)th round.
 
 ## Links
 
