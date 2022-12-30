@@ -3,7 +3,7 @@ layout: post
 title:  "Lower bound on the number of rounds in crash stop synchronous consensus, by 'chain argument'"
 date:   2022-12-30T00:00:00+00:00
 tags: [TODO]
-published: false
+published: true
 mathjax: true
 ---
 
@@ -17,7 +17,21 @@ Here is an informal reasoning and description of the 'chain argument'. The full 
 
 First, we reason that there in an initial state with two executions \\(\alpha\\) and \\(\gamma\\) such that the consensus leads to a different result. In \\(\alpha\\) exactly one process crashes at the beginning of the first round. In \\(\gamma\\) no processes crash.
 
-Then, we will show for any \\(f\\) round execution with \\(f + 2 \leq n\\) processes, that
+Then, we will argue for any \\(f\\) round execution with \\(f + 2 \leq n\\) processes, that any execution is equivalent to one without crashes. This result combined with the first gives us the desired lower bound.
+
+We'll use 'chain argument's. A chain argument constructs a sequence (chain) of executions \\(\alpha_0, \alpha_1, ..., \alpha_k\\) such that every adjacent pair is indistinguishable by at least one process. If the result of execution at one end of the chain is different from at the other, then TODO:
+
+## a) The same configuration can lead to different results
+
+Statement 1: There in an initial state with two executions \\(\alpha\\) and \\(\gamma\\) such that the consensus leads to a different result. In \\(\alpha\\) exactly one process crashes at the beginning of the first round. In \\(\gamma\\) no processes crash. Why?
+
+Define \\(C_i\\) to be the initial configuration (state) where processes \\(p_0, ..., p_i\\) have input \\(1\\) and the others have input \\(0\\). Now, a valid consensus, for executions \\(\alpha_0, ... , \alpha_n\\) starting from \\(C_0, ..., C_n\\), where no processes fail, will return \\(0\\) starting from \\(C_0\\) and \\(1\\) starting from \\(C_n\\).
+
+There must be some \\(j\\) where \\(C_j, C_{j+1}\\) decide different results.
+
+Intuitively, an execution \\(\alpha_{j+1}'\\) starting from \\(C_{j+1}\\) where \\(p_j\\) crashes at the start is not distinguishable from \\(\alpha_j\\) following \\(C_j\\). This gives us the result. They must decide the same results which means that \\(\alpha_{j+1}\\) and \\(\alpha_{j+1}'\\) must decide *different* results.
+
+![]({{ site.url }}/assets/2022-12-30/diagram0.png){: width="65%" .centered }
 
 ## Links
 
