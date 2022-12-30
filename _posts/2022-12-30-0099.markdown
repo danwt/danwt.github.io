@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "Lower bound on the number of rounds in crash stop synchronous consensus, by 'chain argument'"
+date:   2022-12-30T00:00:00+00:00
+tags: [TODO]
+published: false
+mathjax: true
+---
+
+Any consensus algorithm with \\(f + 2 \leq n\\) processes that tolerates \\(f\\) crashes requires more than \\(f\\) rounds.
+
+We suppose binary consensus in a synchronous model where each round consists of a message sending and message delivery phase. Each non crashed process must agree on a value in \\(\lbrace 0, 1 \rbrace \\).
+
+Here is an informal reasoning and description of the 'chain argument'. The full proof is in [Impossibility Results for Distributed Computing](https://ieeexplore.ieee.org/document/6855592/).
+
+##  Structure
+
+First, we reason that there in an initial state with two executions \\(\alpha\\) and \\(\gamma\\) such that the consensus leads to a different result. In \\(\alpha\\) exactly one process crashes at the beginning of the first round. In \\(\gamma\\) no processes crash.
+
+Then, we will show for any \\(f\\) round execution with \\(f + 2 \leq n\\) processes, that
+
+## Links
+
+- [Hagit Attiya; Faith Ellen, Impossibility Results for Distributed Computing , Morgan & Claypool, 2014.](https://ieeexplore.ieee.org/document/6855592/)
