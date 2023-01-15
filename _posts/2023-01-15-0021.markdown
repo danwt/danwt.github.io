@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "Design patterns in a few words"
+date:   2023-01-15T00:00:00+00:00
+tags: [sweng]
+published: false
+---
+
+
+## Command
+
+The [Command](https://gameprogrammingpatterns.com/command.html) pattern ...
+
+## Flyweight
+
+The [Flyweight](https://gameprogrammingpatterns.com/flyweight.html) pattern ...
+
+## Observer
+
+The [Observer](https://gameprogrammingpatterns.com/observer.html) pattern ...
+
+## Prototype
+
+The [Prototype](https://gameprogrammingpatterns.com/prototype.html) pattern ...
+
+## Singleton
+
+The [Singleton](https://gameprogrammingpatterns.com/singleton.html) pattern ...
+
+## State (Machines)
+
+The [State (machines)](https://gameprogrammingpatterns.com/state.html) pattern ...
+
+(See also [Barr group article](https://barrgroup.com/embedded-systems/how-to/introduction-hierarchical-state-machines))
+
+Note:
+Used when you have clearly defined enumerable states with different behaviors. Overall state machine can be cross product of sub state machines. Becomes hairy when sub state machines are not entirely independent and depend on state of other sub states.
+Supposedly useful for input handling, menu screens, parsing text, network protocols, AI. AI moved to behavior trees, planning systems at time of article writing.
+
+## Links
+
+- [Game Programming Patterns](https://gameprogrammingpatterns.com/contents.html)
+- [Command](https://gameprogrammingpatterns.com/command.html)
+- [Flyweight](https://gameprogrammingpatterns.com/flyweight.html)
+- [Observer](https://gameprogrammingpatterns.com/observer.html)
+- [Prototype](https://gameprogrammingpatterns.com/prototype.html)
+- [Singleton](https://gameprogrammingpatterns.com/singleton.html)
+- [State (machines)](https://gameprogrammingpatterns.com/state.html)
