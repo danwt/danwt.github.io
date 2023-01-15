@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Getting gud with Go"
+date:   2023-01-15T00:00:00+00:00
+tags: [sweng]
+published: false
+---
+
+
+
+## Links
+
+- [Effective Go](https://go.dev/doc/effective_go)
+- [The Go Memory Model](https://go.dev/ref/mem)
+- [Google's Style Guide](https://google.github.io/styleguide/go/)
+- [Uber's Style Guide](https://github.com/uber-go/guide/blob/master/style.md)
+- [Refactoring Guru's Design Patterns in Go](https://refactoring.guru/design-patterns/go)
+- [Go Beyond Blog](https://www.gobeyond.dev/)
