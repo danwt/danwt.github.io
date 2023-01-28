@@ -2,7 +2,7 @@
 layout: post
 title:  "Lower bound on the number of rounds in crash stop synchronous consensus"
 date:   2022-12-30T00:00:00+00:00
-tags: [TODO]
+tags: [concurrency]
 published: true
 mathjax: true
 ---
