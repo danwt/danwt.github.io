@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Lower bound on the number of rounds in crash stop synchronous consensus ( by 'chain argument' )"
+title:  "Lower bound on the number of rounds in crash stop synchronous consensus"
 date:   2022-12-30T00:00:00+00:00
 tags: [TODO]
 published: true
