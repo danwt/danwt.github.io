@@ -92,6 +92,7 @@ GEM
     webrick (1.7.0)
 
 PLATFORMS
+  aarch64-linux
   aarch64-linux-musl
   x86_64-darwin-18
   x86_64-linux
@@ -108,4 +109,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.3.14
+   2.3.22

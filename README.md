@@ -51,4 +51,5 @@ This project is open source and available under the [MIT License](LICENSE.md).
 
 ```bash
 docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve
+docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve:stable-20220916052939
 ```

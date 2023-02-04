@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "On cloud native and stuff"
+date:   2022-12-24T00:00:00+00:00
+tags: [TODO]
+published: false
+---
+
