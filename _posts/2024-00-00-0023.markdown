@@ -6,3 +6,14 @@ tags: [TODO]
 published: false
 ---
 
+
+Introductory patterns
+    - Monolith to microservices
+        - strangler fig
+        - parallel run
+        - decorating collaborator
+    - Decomposing the database
+        - The Shared Database 
+        - Database View
+        - Database wrapping service
+        - 
