@@ -26,3 +26,4 @@ published: false
 - [Dave Cheney's blog (language contributor)](https://dave.cheney.net/practical-go)
 - ['Package Driven' Design Article](https://www.ardanlabs.com/blog/2017/02/package-oriented-design.html)
 - [Common things that come up in code review](https://github.com/golang/go/wiki/CodeReviewComments)
+- [Lies we tell ourselves to keep using golang](https://fasterthanli.me/articles/lies-we-tell-ourselves-to-keep-using-golang#go-is-an-island)
