@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Why is NoSql better than SQL? Let's get concrete: DynamoDB"
+date:   2023-07-30T00:00:00+00:00
+tags: [TODO]
+published: false
+---
+
+
+- [There are very few suitable use cases for DyanamoDB (hckrnews)](https://news.ycombinator.com/item?id=14721920)
+- [Some notes on the Dynamo 2022 paper](https://me.0xffff.me/dynamodb2022.html)
+- [reInvent 2018 - choose you database](https://www.youtube.com/watch?v=hwnNbLXN4vA&t=724s)
