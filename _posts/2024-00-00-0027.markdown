@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "A digist and critical analysis of Alex Xu's learning materials."
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+
+## Links
+
+- [System Design Interview Vol 1](https://www.amazon.co.uk/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
+- [System Design Interview Vol 2](https://www.amazon.co.uk/System-Design-Interview-Insiders-Guide/dp/1736049119)
+- [bytebytego.com](https://bytebytego.com/)
+- [System Design 101 (github)](https://github.com/ByteByteGoHq/system-design-101)
+- [System Design Primer (different author)](https://github.com/donnemartin/system-design-primer)
