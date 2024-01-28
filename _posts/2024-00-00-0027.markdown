@@ -14,3 +14,47 @@ published: false
 - [bytebytego.com](https://bytebytego.com/)
 - [System Design 101 (github)](https://github.com/ByteByteGoHq/system-design-101)
 - [System Design Primer (different author)](https://github.com/donnemartin/system-design-primer)
+
+### Best references
+
+- [Scaling memcached at Facebook](https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final170_update.pdf)
+
+## Scratch notes
+
+Good 
+- Explains DNS lookup if you never thought about it before, and how something like cloudflare works (it queries your backend if the image is not available)
+- Good section on various rate limiting algorithms
+- Consistent hashing section is ok, but misses a crucial element which is the fact that you have to randomly (not evenly) distribute the virtual nodes of each real node, see [1](https://web.archive.org/web/20210308102408/https://theory.stanford.edu/%7Etim/s16/l/l1.pdf), [2](https://stackoverflow.com/a/72737727), no mention of implementation data structures (red black tree? think about it)
+- Quorum W+R>?N and relation to strong consistency is explained well
+- a nice section on generating UIDs using a concatenation of bits relating to time/machine/bits
+- a nice overview of a basic webcrawler, with consideration given to priority and politeness, with a simple queue system to deal with that. Details of dealing with login barriers/dynamic pages is lacking 
+- News feed section, while brief, is at least concrete
+
+
+
+Not enough info
+- Vague mention of NoSQL and it being 'easier to scale'
+- GeoDNS to direct people to right datacenter
+- Joins and denormalization: when sharding you want to avoid shards, how do you sovlve this?
+- There is a quote about vector clocks that refers to Dynamo saying that dynamo does not store full clocks and they did not have a problem in production (page 99 of pdf)
+- in the distributed key value store does he suggest using a bloom filter to determine shard key membership?
+- bloom filter referenced without explanation, casa
+- completely vague description of the 'ticket server' approach to UID generation
+- tinyurl, hash method (choose shortest length possible to exceed the needed possible space) has an extremely high risk of collision. The collision resistance method is not explained or analysed
+
+
+Meh
+- Section on a notification system is all trivial and obvious
+
+
+
+## Highlights
+
+I should write about
+- rate limiters
+- consistent hashing, but clarify the virtual node distribution
+- strongly consistent quorums
+- using merkle trees for comparing and quickly repairing data in non byznatine systems
+- 
+
+

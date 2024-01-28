@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "All the data structures in Redis - a letter of admiration"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+Look at each redis data structure and how they work
