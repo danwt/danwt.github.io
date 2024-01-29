@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "When the interview problem is a bit too interesting"
+title:  "A most interesting interview problem - concurrent ring buffer in Go"
 date:   2023-10-16T00:00:00+00:00
 tags: [algorithms]
 published: false
@@ -18,7 +18,7 @@ Now, given the fact that the buffer _should_ wrap around, I take this to mean th
 
 This is interesting when contrasted with the Popper needing to be blocked by the Adders, when the queue is empty!
 
-I think this can be solved quite traditionally, using head and tail pointers, a mutex and a condition variable. However, the interviewer hinted at an elegant solution using Go channels (nevermind that Go channels are implemented with a traditional ring buffer anyway). 
+I think this can be solved quite traditionally, using head and tail pointers, a mutex and a condition variable, but I wasn't able to in the 40 minutes given. However, the interviewer hinted at an elegant solution using Go channels (nevermind that Go channels are implemented with a traditional ring buffer anyway). 
 
 I've though about some kind of channel based solution, but cannot come to anything that simplifies or improves on a traditional pointer and condition variable combo. 
 
