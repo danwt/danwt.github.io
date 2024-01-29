@@ -41,6 +41,7 @@ Not enough info
 - bloom filter referenced without explanation, casa
 - completely vague description of the 'ticket server' approach to UID generation
 - tinyurl, hash method (choose shortest length possible to exceed the needed possible space) has an extremely high risk of collision. The collision resistance method is not explained or analysed
+- chat section did not delve into group queues enough
 
 
 Meh
@@ -55,6 +56,9 @@ I should write about
 - consistent hashing, but clarify the virtual node distribution
 - strongly consistent quorums
 - using merkle trees for comparing and quickly repairing data in non byznatine systems
-- 
+- chat:
+    using some kind of queue for each user in a message group
+    using an incrementing group wise message id to get unseen messages
+    it was
 
 
