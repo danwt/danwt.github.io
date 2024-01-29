@@ -42,10 +42,12 @@ Not enough info
 - completely vague description of the 'ticket server' approach to UID generation
 - tinyurl, hash method (choose shortest length possible to exceed the needed possible space) has an extremely high risk of collision. The collision resistance method is not explained or analysed
 - chat section did not delve into group queues enough
+- Google Drive section is very high level, glosses over important and interesting problems like deduplication, encryption, key rotation ect.
 
 
 Meh
 - Section on a notification system is all trivial and obvious
+- The YouTube section is a 1000 feet interview, and doesn't get to grips with any problems enough to be useful
 
 
 
