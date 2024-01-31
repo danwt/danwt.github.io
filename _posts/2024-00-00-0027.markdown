@@ -30,8 +30,6 @@ Good
 - a nice overview of a basic webcrawler, with consideration given to priority and politeness, with a simple queue system to deal with that. Details of dealing with login barriers/dynamic pages is lacking 
 - News feed section, while brief, is at least concrete
 
-
-
 Not enough info
 - Vague mention of NoSQL and it being 'easier to scale'
 - GeoDNS to direct people to right datacenter
@@ -44,12 +42,9 @@ Not enough info
 - chat section did not delve into group queues enough
 - Google Drive section is very high level, glosses over important and interesting problems like deduplication, encryption, key rotation ect.
 
-
 Meh
 - Section on a notification system is all trivial and obvious
 - The YouTube section is a 1000 feet interview, and doesn't get to grips with any problems enough to be useful
-
-
 
 ## Highlights
 
