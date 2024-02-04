@@ -61,8 +61,28 @@ storage
     - page layouts  
         - tuple oriented storage
             most systems use slotted pages: have an index array at the start of the page growing forward, and store the data at the end of the page growing backwards
-            
-
-
-        - log structured
+            flow (insert): 
+                check page directory to find a page with a free slot 
+                get the page from disk/memory    
+                check slot array for an empty slot and try to fit it in
+            flow (update):
+                check page directory to fint the page
+                get the page from disk/memory    
+                use slot array to find offset
+                if fit: overwrite
+                else: mark deleted, insert somewhere else
+            leads to fragmentatino 
+            useless io: 1 page for 1 tuple in worst case
+        - log structured (original paper was LSM tree) (levelDB,rocksDB are examples)
+            store updates to tuples in a growing log
+            maintain index -> tuple id to latest log record 
+            can eventually compact, store only last item for tuple, can sort for fast lookup
         - index organized
+            afaiu this was your typical btree storage
+    - various stuff about types
+        I wasnt listening very closely here 
+        
+
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+LINK DUMP
+- https://old.reddit.com/r/databasedevelopment/comments/187cp1g/write_throughput_differences_in_btree_vs_lsmtree/
