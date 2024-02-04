@@ -5,3 +5,47 @@ date:   2023-10-16T00:00:00+00:00
 tags: [algorithms]
 published: false
 ---
+
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+ADVANCED COURSE 2024
+
+OLAP
+
+Modern components
+- system catalogs
+- intermediate repr
+- query optimizer
+- file format / access libs
+- execution engines/ fabrics
+
+Sequential scanning
+- data encoding/compression
+- prefetching
+- parallelization/vectorization
+- clustering/sorting
+- late materialization
+- materialized views/caching
+- skipping
+- compiling specialized code
+
+- Encodings/formats
+    btrblocks
+        - try loads of schemes for each column datatype, on 1% sample
+          this adds a 2% overhead overrall on data ingestion
+        - fast static symbol table
+            a hash table without linked buckets: just kick things out
+            probabilistically you will end up with frequent elements in there
+        - roaring bitmap 
+    fastlanes
+        - reorder stuff to maximise SIMD benefit 
+    bitweaving
+        - bit slice (given a list of integers, store a list of first bits, second bits etc)
+          do it in a way to get more SIMD
+    priscilla
+        - used in youtube, expose compressions dictionary to upper level so that predicates can be evaluated more  easily
+
+    similarly, look at lz4, snappy
+
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬``
+
+BASICS COURSE FALL 2023

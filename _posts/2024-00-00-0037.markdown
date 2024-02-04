@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Reflections on a year of backend development"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+Biggest pain points
+- Making changes to shared package/middleware code, in conjunction with terraform changes and multiple service
+- When you deploy a new service version you want to see the diff, but how do you avoid a full repo diff? Can you do some kind of code walking to see the the changes in the repo directory? Can you only see the diff of downstream code? How would this work if you're deploying multiple directories with a make command?
+

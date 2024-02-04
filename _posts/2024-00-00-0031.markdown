@@ -11,4 +11,8 @@ published: false
 - dynamo
 - mongo
 - postgres
-- 
+- tigerbeetle
+- duckdb
+- snowflake
+- yellowbrick
+- kafka
