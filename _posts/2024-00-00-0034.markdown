@@ -49,3 +49,20 @@ Sequential scanning
 ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬``
 
 BASICS COURSE FALL 2023
+
+storage
+    - why not use the os?
+        - it can flush dirty pages at any time (wrong time for transaction processing) 
+        - os stalls threads on page fault
+        - dbms cannot be aware of virtual memory, which pages are loaded, if using virtual memory 
+        - os just too slow, too much contention on scheduling data structures
+        - [tlb shootdown](https://stackoverflow.com/questions/3748384/what-is-tlb-shootdown)
+        - if you try it you'll be using madvise,mlock,mysnc which is onerous
+    - page layouts  
+        - tuple oriented storage
+            most systems use slotted pages: have an index array at the start of the page growing forward, and store the data at the end of the page growing backwards
+            
+
+
+        - log structured
+        - index organized
