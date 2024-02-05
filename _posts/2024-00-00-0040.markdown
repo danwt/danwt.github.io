@@ -1,7 +1,61 @@
 ---
 layout: post
-title:  "Let's understand erasure codes"
+title:  "Let's understand erasure codes and data availalability layers"
 date:   2023-10-16T00:00:00+00:00
 tags: [algorithms]
 published: false
 ---
+
+Questions arised from reading [Erasure Coding for the Masses](https://towardsdatascience.com/erasure-coding-for-the-masses-2c23c74bf87e)
+1. Do you need to use a Cauchy matrix? Why a Cauchy matrix, other than the intertability?
+2. Is invertability the only thing needed?
+3. Are some erasure codes better than others? Besides the k/n params?
+4. Remind me, how do recipricals work in prime finite fields?
+5. What's the bath behind extension fields?
+6. How much of this is relevant for Celestia etc?
+7. How much overhead do matrix operations add? Do you actually explicitly do matrix operations?
+8. What's up with the various ways of computing reed solomon codes? ie. coefficient of polynomial vs value of polynomial with interp?
+9. Recall why finite fields have prime order
+10. where does the reed solomon code fit in among other codes and why was it chosen for celestia above others?
+    Other comments 
+    - Size of prime field should be at least n+k 
+    - Can I better understand the binary ecoder matrix? It leads to fast XOR speedups
+
+Questions arisen from reading [Lazy Ledger Paper (Celestia)](http://www0.cs.ucl.ac.uk/staff/m.albassam/publications/lazyledger-paper.pdf)
+1. If light clients need to be able to handle fraud proofs, is that not an avenue of attack on the light client?
+2. what exactly does the block header contain?
+3. what are namespaced merkle trees and how do they work?
+4. how exactly doe sthe custom hash functio work?
+5. what exactly is the difference between a cryptographically sucure, and non cryptographically secure hash?
+6. if 2d why not 3d?
+7. Do we have just one kind of fraud proof? There is an app level fraud proof, but also an erause code level fraud proof?
+8. Collaborative proof generation?
+9. Comparison to proof of retrievability?
+10. How exactly does reed solomon work? Can I contrast it to the basic cauchy matrix erasure code?
+11. Where does the scaling come in that Manav mentioned? he mentioned some kind of light client trust assumption scaling
+12. How does proofs of proximity fit in?
+13. Can a stark or snark help, what is a stark or snark?
+14. I read a quote: celestia scales with the number of light nodes. Why?
+
+    Other comments
+    - the blockchain header contains an erasure code of the coded merkle tree
+    - the square root thing is specifically for the fraud proof, to see if the erasure code contained in the block header is invalid
+    - num merkel roots is 2n^1/2, 1 for each row and column
+
+EigenDA 
+Polygon Avail
+Celestiums?
+
+Avail:
+    - apparently is uses a KZG scheme? Kate, Zaverucha, and Goldberg
+
+
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+
+Links
+
+- [Erasure Coding for the Masses](https://towardsdatascience.com/erasure-coding-for-the-masses-2c23c74bf87e)
+- [Lazy Ledger Paper (Celestia)](http://www0.cs.ucl.ac.uk/staff/m.albassam/publications/lazyledger-paper.pdf)
+- [Lazy Ledger Paper - Buterin Blog Post](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
+- [A Comparison Between DA Layers](https://forum.celestia.org/t/a-comparison-between-da-layers/899)
+- [A16z on Danksharding](https://a16zcrypto.com/posts/article/an-overview-of-danksharding-and-a-proposal-for-improvement-of-das/)
