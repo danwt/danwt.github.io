@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Talking heads"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+Andreas Kling
+Steve Yegge
+The Primeagen
+Tech Lead
+Tsoding
