@@ -17,3 +17,17 @@ TODO:
 
 Can I expand this into a treatise
 - Piketty books, Amir, Sufi, Garys Economics, Charles Dickens, 
+
+Questions for myself:
+- What happens if the government cannot bad on its bond obligations?
+    Is it like:
+        Goverment looks like it cant pay
+        Face price of bond goes down due to high risk
+        Central bank buys loads of cheap bonds?
+        Floods the market, which raises taxes? 
+        Hmm...
+    Alternatively, how does the government get into debt in the first place?
+         
+
+
+    The central bank basically does QE by buying bonds, 
