@@ -15,3 +15,4 @@ Bit torrent client (free rider)
 viewstamped replication 1988
 ZAB 2008
 consistent hashing
+some ZK stuff
