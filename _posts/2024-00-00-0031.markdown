@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "on the biggest databases of our time: cassandra, "
+title:  "on the biggest databases of our time: cassandra, .. <TODO> "
 date:   2023-10-16T00:00:00+00:00
 tags: [algorithms]
 published: false
@@ -16,3 +16,4 @@ published: false
 - snowflake
 - yellowbrick
 - kafka
+- TODO get more from the cmu course notes

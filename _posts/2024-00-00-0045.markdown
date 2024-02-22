@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Dive into ZK"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+- Completeness: if the prover is correct they'll eventually convince the verifier
+- Soundness: the prover can only be convincing if they're correct
+- Zero Knowledge: the verifier learns NOTHING about the solution
+
+# commit reveal
+
+- [TODO name](https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/)

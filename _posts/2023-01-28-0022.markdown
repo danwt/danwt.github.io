@@ -28,3 +28,6 @@ published: false
 - [Common things that come up in code review](https://github.com/golang/go/wiki/CodeReviewComments)
 - [Lies we tell ourselves to keep using golang](https://fasterthanli.me/articles/lies-we-tell-ourselves-to-keep-using-golang#go-is-an-island)
 - [How I write HTTP services in Go after 13 years](https://news.ycombinator.com/item?id=39318867)
+
+Can I tie into google API design or my article on a year of backend engineering?
+

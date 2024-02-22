@@ -15,8 +15,15 @@ TODO:
 - [Bank of England: Money creation in the modern economy](https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy)
 - [Wayback machine](<https://web.archive.org/web/20220531180345/https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy>)
 
+
 Can I expand this into a treatise
 - Piketty books, Amir, Sufi, Garys Economics, Charles Dickens, 
+    - house of debt, https://www.ft.com/content/3ec604c0-ec96-11e3-8963-00144feabdc0
+    - chronicles of our troubled times
+    - central banking 101
+    - capital in the e1st century 
+    - gary stevenson website
+    - EconomicsforInclusiveProsperity: A nIntroduction pdf
 
 Questions for myself:
 - What happens if the government cannot bad on its bond obligations?
@@ -32,3 +39,6 @@ Questions for myself:
 
     The central bank basically does QE by buying bonds, 
 - how do you encourage actual real investment instead of buying existing assets?
+- why does more equality lead to more growth
+    (velocity of money)
+- why dont the asset rich necessarily invest?
