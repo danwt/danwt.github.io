@@ -16,3 +16,10 @@ viewstamped replication 1988
 ZAB 2008
 consistent hashing
 some ZK stuff
+tendermint
+
+
+books/learning:
+    rust for rustaceans
+    zero to production
+    rustlings(?)

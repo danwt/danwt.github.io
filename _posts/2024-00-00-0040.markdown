@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Let's understand erasure codes and data availalability layers"
+title:  "Let's understand erasure codes and data availability layers"
 date:   2023-10-16T00:00:00+00:00
 tags: [algorithms]
 published: false

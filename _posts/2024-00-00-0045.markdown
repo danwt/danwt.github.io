@@ -10,6 +10,25 @@ published: false
 - Soundness: the prover can only be convincing if they're correct
 - Zero Knowledge: the verifier learns NOTHING about the solution
 
+Circuit: TODO:
+
+Snark:
+- Succinct: proof is short (logarithmic in circuit size) and verifiable also in logarithm of circuit size
+
+Circuit setup procedures: TODO:
+
+Example snarks: Groth16, Plonk/Marlin, Bulletproofs, STARK, DARK
+How are snarks used:
+    CirC to build a dsl for writing snark provable stuff
+
+How does the extractor adversary model work? (Knowledge soundness)
+
+
+
 # commit reveal
 
 - [TODO name](https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/)
+https://blog.cryptographyengineering.com/2017/01/21/zero-knowledge-proofs-an-illustrated-primer-part-2/
+
+where I'm at:
+Boneh lecture 2

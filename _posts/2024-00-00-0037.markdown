@@ -17,3 +17,8 @@ Biggest pain points
 - on hiring and doing shit standard, and how that helps
 - why you need a really well thought out error system from the get go
 - explain the debacle with http codes logging people out etc
+
+Links
+
+https://isburmistrov.substack.com/p/all-you-need-is-wide-events-not-metrics
+https://news.ycombinator.com/item?id=39529775
