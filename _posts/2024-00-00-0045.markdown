@@ -23,6 +23,18 @@ How are snarks used:
 
 How does the extractor adversary model work? (Knowledge soundness)
 
+On how basic public key crypto works
+    Alice chooses a large number pq, and e relatively prime to (p-1)(q-1)
+        (how can she choose e fast?)
+    She also chooses d, an inverse of e in the group of order (p-1)(q-1) 
+    She makes pq, e, public
+    Bob encodes his message M to get ciphertext C = M ^e mod pq
+    Alice does C^d mod pq = M^ed mod pq
+        Which returns M, because ed mod (p-1)(q-1) is 1
+    TODO: understand the relation between pq and (p-1)(q-1) better, something with totient?
+        (Eulers theorem§)
+
+
 
 
 # commit reveal

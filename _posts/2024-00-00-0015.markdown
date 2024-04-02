@@ -29,6 +29,9 @@ Can I expand this into a treatise
     - gary stevenson website
     - EconomicsforInclusiveProsperity: A nIntroduction pdf
 
+    Aaron Advani, Gabriel Zucman, Thomas Piketty, Ha-Joon Chang, Atif Mian, Amir Sufi,
+    Joseph J Wang and Perry Mehrling. Ludwig Straub, Aaron Advaani, Tony Atkinson, Angus Deaton
+
 Questions for myself:
 - What happens if the government cannot bad on its bond obligations?
     Is it like:
@@ -49,6 +52,10 @@ Questions for myself:
 - how do you actually trade to take advantage of the prediction 'assets will go up'?
 - why does fascism tend to rise after inequality?
 - why does the government need to pay back it's bonds/pay back the central bank?
+- gary says
+- who are the largest owners of government bonds? who is the goverment in debt to?
+- gary says as inequality increases then interest rates go to zero
+    (rent can only go up so much, but prices can go to infinity)
 
 
 need to recap the central premise of 'how markets fail'
