@@ -7,7 +7,7 @@ published: false
 ---
 
 - Completeness: if the prover is correct they'll eventually convince the verifier
-- Soundness: the prover can only be convincing if they're correct
+- Soundness: the prover can only be convincing if they're correct (with high probability)
 - Zero Knowledge: the verifier learns NOTHING about the solution
 
 Circuit: TODO:
@@ -35,12 +35,28 @@ On how basic public key crypto works
         (Eulers theorem§)
 
 
+How is ZK applied to blockchain?
+    'A ZK rollup has a Zero-Knowledge circuit that represents its state machine. Thus, a rollup block producer can submit a ZK-SNARK proof that the submitted app hash is indeed the correct result of applying the included transactions in the block.'
+    Source: https://github.com/cosmos/ibc/blob/main/spec/client/Rollup-Integration-guide.md
+
+
+How do elliptic curves work?
+Bilinear groups (KZG)? KZG is not a hiding commitment by default
+    Prove f(u)=v, means there is q(X)(X-u)-v=f(x)
+    Need to know what an algebraic pairing is
+What exactly does it mean to 'open' a commitment?
+Trusted setup for the public params?
+    Dory (alternative to KZG, but logarithmic) avoids secret randomness in setup, no public params needed
+
+Polynomial IOP
+    an interactive process where prover commits to polynomials, and then verifier asks for evaluations at particular points
+
+How to make interactive protocols into non-interactive? Use fiat-shamir transform
+
+
 
 
 # commit reveal
 
 - [TODO name](https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/)
 https://blog.cryptographyengineering.com/2017/01/21/zero-knowledge-proofs-an-illustrated-primer-part-2/
-
-where I'm at:
-Boneh lecture 2
