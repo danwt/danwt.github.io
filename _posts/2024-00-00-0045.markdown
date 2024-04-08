@@ -60,3 +60,6 @@ How to make interactive protocols into non-interactive? Use fiat-shamir transfor
 
 - [TODO name](https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/)
 https://blog.cryptographyengineering.com/2017/01/21/zero-knowledge-proofs-an-illustrated-primer-part-2/
+
+Sokoku example https://manishearth.github.io/blog/2016/08/10/interactive-sudoku-zero-knowledge-proof/
+zk blog post for generic execution https://manishearth.github.io/blog/2016/03/05/exploring-zero-knowledge-proofs/
