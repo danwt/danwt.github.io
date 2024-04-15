@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "How do private blockchains work?"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+Monero, Zcash, Tornado, Miximus, ZEXE, Aztec
+Penumbra
+

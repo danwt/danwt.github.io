@@ -59,3 +59,7 @@ Links
 - [Lazy Ledger Paper - Buterin Blog Post](https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding)
 - [A Comparison Between DA Layers](https://forum.celestia.org/t/a-comparison-between-da-layers/899)
 - [A16z on Danksharding](https://a16zcrypto.com/posts/article/an-overview-of-danksharding-and-a-proposal-for-improvement-of-das/)
+
+
+Dump
+    Filecoin, Danksharding

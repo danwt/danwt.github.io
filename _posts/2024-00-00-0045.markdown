@@ -63,3 +63,14 @@ https://blog.cryptographyengineering.com/2017/01/21/zero-knowledge-proofs-an-ill
 
 Sokoku example https://manishearth.github.io/blog/2016/08/10/interactive-sudoku-zero-knowledge-proof/
 zk blog post for generic execution https://manishearth.github.io/blog/2016/03/05/exploring-zero-knowledge-proofs/
+
+# addendum: cosmos and the zero knowledge landscape
+
+- what are snarks https://crypto.stackexchange.com/questions/19884/what-are-snarks?
+- https://forum.celestia.org/t/celestia-snark-accounts-design-spec/1639
+- https://sovereign.mirror.xyz/pZl5kAtNIRQiKAjuFvDOQCmFIamGnf0oul3as_DhqGA
+
+
+# dump
+
+snarktember 2019?
