@@ -74,3 +74,8 @@ zk blog post for generic execution https://manishearth.github.io/blog/2016/03/05
 # dump
 
 snarktember 2019?
+
+¬¬¬¬¬¬ questions
+
+what is a polynomial iop? (interactive oracle proof)
+what is a polynomial commitment?

@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Rollups"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+Rollup intro
+- Vitalik incomplete https://vitalik.eth.limo/general/2021/01/05/rollup.html
+- Delfi complete https://members.delphidigital.io/reports/the-complete-guide-to-rollups/#rollup-fees-8011
+- Vitalik roadmap https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698
+
+A series of controversial blog posts
+- original video: https://www.youtube.com/watch?v=NKQz9jU0ftg
+    he makes very nice sounding but ultimately hard to follow points that rollups exist separate from the 'view' into them which is zk/optimistic etc
+- followup reaction 1: https://joncharbonneau.substack.com/p/rollups-arent-real
+- followup reaction 2: https://dba.mirror.xyz/LYUb_Y2huJhNUw_z8ltqui2d6KY8Fc3t_cnSE9rDL_o
+- followup reaction 3: https://dba.mirror.xyz/hyRKK4_PDrO2FKpF6eIRvnq8sA_Mx7dXtQf_MWzSWTU
