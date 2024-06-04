@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "On versioning, rollouts, (diamond) dependencies and upgrades"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+app hash problem
+
+- two phase deployment blog https://tommcfarlin.com/production-deployment-plan/
+- aws builders lib two phase https://aws.amazon.com/builders-library/ensuring-rollback-safety-during-deployments/
+- two phase commit https://en.wikipedia.org/wiki/Two-phase_commit_protocol
