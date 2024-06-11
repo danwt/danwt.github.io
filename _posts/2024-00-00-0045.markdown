@@ -79,3 +79,12 @@ snarktember 2019?
 
 what is a polynomial iop? (interactive oracle proof)
 what is a polynomial commitment?
+
+# links
+
+https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649 vitalik 
+
+# the beginnings of a blog
+
+Could work backwards from some example?
+The tornado one is not a bad shout

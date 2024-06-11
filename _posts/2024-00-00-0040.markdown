@@ -45,6 +45,7 @@ Questions arisen from reading [Lazy Ledger Paper (Celestia)](http://www0.cs.ucl.
 EigenDA 
 Polygon Avail
 Celestiums?
+Danksharding
 
 Avail:
     - apparently is uses a KZG scheme? Kate, Zaverucha, and Goldberg
