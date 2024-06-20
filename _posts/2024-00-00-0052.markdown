@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Get gud with go 2, a wiser tale"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+google errors
+https://jbrandhorst.com/post/grpc-errors/
+https://pkg.go.dev/google.golang.org/grpc/internal/status@v1.60.1
+https://pkg.go.dev/google.golang.org/grpc/codes@v1.64.0
+nice article
+
+[texjt](2024-00-00-0051.markdown)
+
+app hash problem
+
+- two phase deployment blog https://tommcfarlin.com/production-deployment-plan/
+- aws builders lib two phase https://aws.amazon.com/builders-library/ensuring-rollback-safety-during-deployments/
+- two phase commit https://en.wikipedia.org/wiki/Two-phase_commit_protocol
