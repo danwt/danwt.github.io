@@ -14,3 +14,11 @@ https://www.rareskills.io/post/how-does-tornado-cash-work#:~:text=Tornado%20Cash
 https://www.youtube.com/watch?v=jGmvJZ7m7WU&t=1s
 https://tlu.tarilabs.com/mimblewimble-basics/
 
+
+# References
+
+Blog series
+    https://medium.com/@yi.sun/privacy-in-cryptocurrencies-d4b268157f6c
+    https://medium.com/@yi.sun/privacy-in-cryptocurrencies-mixing-based-approaches-ce08d0040c88
+    https://medium.com/@krzhang/privacy-in-cryptocurrencies-zero-knowledge-and-zk-snarks-1-2-68ce1838fd9c
+    https://medium.com/@krzhang/privacy-in-cryptocurrencies-zero-knowledge-and-zk-snarks-part-2-f6a3ee167b16
