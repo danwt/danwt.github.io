@@ -18,9 +18,9 @@ Hint 3. Assumptions on vault funds origin.
 
 Solution: send 1 token to the vault. It will be break the assertion
 
-```
-uint256 balanceBefore = totalAssets();
-if (convertToShares(totalSupply) != balanceBefore) revert InvalidBalance(); // enforce ERC4626 requirement
+```solidity
+uint256 balanceBefore = totalAssets(); // DamnValuableToken assets belonging to the vault
+if (convertToShares(totalSupply) != balanceBefore) revert InvalidBalance();
 ```
 
 The assertion is that the amount of shares the vault owns of the DamnValuableToken exactly corresponds to it's funds. But if you send the vault funds directly, it doesn't have a corresponding share.
