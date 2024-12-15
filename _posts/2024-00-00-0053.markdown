@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "Damn Vulnerable Defi V4"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+DVD is a fun series of challenges to learn Solidity.
+
+# Problem 1 - Unstoppable
+
+Try to DOS the flash loan contract.
+
+Hint 1. The requirements the lender contract puts on itself.
+Hint 2. ERC4626 usage.
+Hint 3. Assumptions on vault funds origin.
+
+Solution: send 1 token to the vault. It will be break the assertion
+
+```
+uint256 balanceBefore = totalAssets();
+if (convertToShares(totalSupply) != balanceBefore) revert InvalidBalance(); // enforce ERC4626 requirement
+```
+
+The assertion is that the amount of shares the vault owns of the DamnValuableToken exactly corresponds to it's funds. But if you send the vault funds directly, it doesn't have a corresponding share.
+
+# Problem 2
