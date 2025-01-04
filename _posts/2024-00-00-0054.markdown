@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Ethernauts"
+date:   2023-10-16T00:00:00+00:00
+tags: [algorithms]
+published: false
+---
+
+Date: 4th Jan 2025
+
+## 15 - Naught Coin
+
+Use erc20 transferFrom (and approve).
+
+## 16 - Preservation
+
+It's a repeat of the delegatecall concept from an earlier challenge.
+
+Use an attacking time zone library contract witht the same slot layout to change the owner field in the caller state in setFirstTime.
+
+## 17 - Recovery
+
+Contract addresses are deterministically calculable from the EOA nonce (or nonce of the factory contract) and creator address.
+
+Calculate the address or find it on Etherscan and then call destroy().
+
+## 18 - 
