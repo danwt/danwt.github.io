@@ -24,4 +24,12 @@ Contract addresses are deterministically calculable from the EOA nonce (or nonce
 
 Calculate the address or find it on Etherscan and then call destroy().
 
-## 18 - 
+## 18 - MagicNum
+
+TODO: requires assembly
+
+## 19 - Alien Codex
+
+Underflow the array to wrap around and be able to access the owner. Solidity contracts have a maximum number of slots.
+
+## 20 - 
