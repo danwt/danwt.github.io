@@ -34,7 +34,7 @@ Underflow the array to wrap around and be able to access the owner. Solidity con
 
 ## 20 - Denial
 
-The attacking contract should drain all the gas and cause a TX fail, by implementing receive implementing receive() .
+The attacking contract should drain all the gas and cause a TX fail, by implementing receive implementing receive().
 
 Why can't you use revert() or require()? Because they are not bubbled up when using low level call().
 
@@ -42,6 +42,15 @@ Why can't you use revert() or require()? Because they are not bubbled up when us
 
 Implement Buyer::price to read the isSold variable and return a dynamic price.
 
-## 22 
+## 22 - Dex (1)
+
+The swap formula is nonsense. Abuse it by swapping all tokens back and forth.
+
+The rounding is an inconsequential detail.
+
+## 23 - Dex (2)
+
+We can just do the exact same attack again. But alternatively, send 1 foo token to the contract, and swap (one) with it to receive the entirety of another token.
+
 
 
