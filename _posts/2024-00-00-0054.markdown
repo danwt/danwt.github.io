@@ -32,4 +32,16 @@ TODO: requires assembly
 
 Underflow the array to wrap around and be able to access the owner. Solidity contracts have a maximum number of slots.
 
-## 20 - 
+## 20 - Denial
+
+The attacking contract should drain all the gas and cause a TX fail, by implementing receive implementing receive() .
+
+Why can't you use revert() or require()? Because they are not bubbled up when using low level call().
+
+## 21 - Shop
+
+Implement Buyer::price to read the isSold variable and return a dynamic price.
+
+## 22 
+
+
