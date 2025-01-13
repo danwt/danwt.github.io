@@ -14,7 +14,7 @@ google_analytics: G-LQ65HF897P # Put your Google Analytics code
 # Author settings
 author:
   name: Daniel Tisdall
-  bio: concurrency | correctness | sw eng
+  bio: software
   picture: assets/images/circles.png 
   github: danwt # github username
   #twitter: onepase # twitter username
@@ -23,8 +23,8 @@ author:
   #youtube: https://www.youtube.com/channel/UCMmAto-wxBootXN91AzBiDg # youtube username
   linkedin: daniel-tisdall-a3594021b # linkedin username
   #email: your-email@email.com # email adress
-  codeforces: freshlysquozen
-  atcoder: danielt_0000
+  # codeforces: freshlysquozen
+  # atcoder: danielt_0000
 
 
 # URL settings
