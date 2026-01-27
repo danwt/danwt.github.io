@@ -1,8 +1,0 @@
----
-layout: post
-title:  "Reflections on trusting trust"
-date:   2023-10-16T00:00:00+00:00
-tags: [algorithms]
-published: false
----
-
